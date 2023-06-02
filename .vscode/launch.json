@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Portfolio Client",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm start",
+      "cwd": "${workspaceRoot}/client",
+    },
+    {
       "type": "node",
       "request": "launch",
       "name": "Portfolio Server",
@@ -12,6 +19,15 @@
         "<node_internals>/**"
       ],
       "program": "${workspaceFolder}/server/src/server.js"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test Mail",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "program": "${workspaceFolder}/server/src/email/main.js"
     }
   ]
 }
