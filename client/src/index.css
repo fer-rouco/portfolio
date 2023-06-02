@@ -1,0 +1,75 @@
+/* Variables */
+
+:root {
+  --main-white: #f0f0f0;
+  --main-red: #be3144;
+  --main-blue: #356598;
+  --main-gray: #303841;
+  --main-green: #3A847A;
+  --main-input-color: var(--main-white);
+  --main-input-background-color: #80A1C2;
+}
+
+/* Base reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 16px;
+  /* cursor: url('./assets/pointer.svg'), pointer; */
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: var(--main-gray);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: var(--main-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--main-blue);
+}
+
+/* Base styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color:  var(--main-red); /*#091434; */
+  overflow-x: hidden; 
+}
+
+/* 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */

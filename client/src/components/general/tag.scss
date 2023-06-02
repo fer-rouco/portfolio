@@ -1,0 +1,12 @@
+.tag-link {
+  text-decoration: none;
+
+  &__span {
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 1.25rem;
+    padding: 0.125rem 0.5rem;
+    color: var(--main-white);
+  }
+}
+

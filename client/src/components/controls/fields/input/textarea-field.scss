@@ -1,0 +1,8 @@
+.textarea-container {
+  height: 18rem;
+
+  textarea {
+    height: calc(100% - 3rem);
+    resize: none;
+  }
+}

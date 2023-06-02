@@ -1,0 +1,24 @@
+.social-links {
+  font-size: 2.5rem;
+  margin: .5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  
+  .fa-linkedin {
+    color: #0273b1;
+  }
+  
+  .fa-envelope {
+    color: var(--main-red);
+  } 
+}
+
+.copyrights {
+  position: absolute;
+  font-size: 1.2rem;
+  right: 1rem;
+  top: .5rem;
+  color: var(--main-gray);
+}

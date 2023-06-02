@@ -1,0 +1,49 @@
+/* Welcome section */
+
+.welcome-section {
+  height: 100vh;
+  padding-top: 2.6rem;
+  background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+  position: relative;
+  z-index: -2;
+  /* background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222)); */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  &__text-container {
+    text-align: center;
+    position: absolute;
+    z-index: 2;
+    top: calc(20%);
+  }
+    
+  &__text-hi {
+    font-size: 5rem;
+  }
+  
+  &__text-web-dev {
+    font-size: 1.5rem;
+    color: #800080; /*var(--main-red); */ /* var(--main-blue); */
+  }
+
+  &__sun {
+    width: 10rem;
+    height: 10rem;
+    background-color: #ffff00;
+    border-radius: 50%;
+    position: absolute;
+    top: 1.25rem;
+    right: -3.75rem;
+    z-index: -1;
+  }
+
+
+  &__waves {
+    height: 100%;
+    width: 100%;
+  }
+}
