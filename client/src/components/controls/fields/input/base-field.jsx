@@ -15,7 +15,7 @@ function BaseField({
   const { executeValidation, initializeField, setValid, isValid } = useForm();
 
   useEffect(() => {
-    initializeField(attr);
+    initializeField && initializeField(attr);
   });
 
   useEffect(() => {
@@ -34,9 +34,13 @@ function BaseField({
   const hideRequiredAsterisk = () => {
     return (
       !required ||
-      !isValid(attr) /*||
+      !isValueValid(attr) /*||
       (isValid(attr) && executeValidation && Boolean(value.trim()))*/
     );
+  }
+  
+  const isValueValid = (attr) => {
+    return isValid && isValid(attr);
   }
 
   return (
@@ -44,7 +48,7 @@ function BaseField({
       <div className='label-container' >
         <label htmlFor={`input-${attr}`} >{label} :</label>
         <span className={`label-container__required ${ hideRequiredAsterisk() ? 'hide' : '' }`} >*</span>
-        <span className={`label-container__error-label ${(isValid(attr)) ? 'hide' : '' }`} >{errorLabel || `Please enter your ${label.toLowerCase()}.`}</span>
+        <span className={`label-container__error-label ${(isValueValid(attr)) ? 'hide' : '' }`} >{errorLabel || `Please enter your ${label.toLowerCase()}.`}</span>
       </div>
       {children}
     </div>
