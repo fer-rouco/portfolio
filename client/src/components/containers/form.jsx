@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FormProvider } from './form-context';
 import SubmitButton from '../controls/buttons/submit-button';
 
-const Form = ({ children, onSubmit }) => {
+const Form = ({ children, onSubmit, modelState }) => {
   const [validate, setValidate] = useState(false);
 
   const executeValidation = (event) => {
@@ -13,12 +13,12 @@ const Form = ({ children, onSubmit }) => {
     });
   };
 
-  const handleOnValid = () => {
-    onSubmit();
+  const handleOnValid = (model) => {
+    onSubmit(model);
   }
 
   return (
-    <FormProvider validate={validate} handleOnValid={handleOnValid} >
+    <FormProvider validate={validate} handleOnValid={handleOnValid} modelState={modelState} >
       <form onSubmit={executeValidation} noValidate>
         { children }
         { onSubmit && <SubmitButton></SubmitButton> }

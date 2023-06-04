@@ -7,11 +7,12 @@ import TextAreaField from "../controls/fields/input/textarea-field";
 import "./contact-section.scss";
 
 function ContactSection() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+  const modelState = useState({ name: '', email: '', message: '' });
+  const [model] = modelState;
+  
+  const onSubmit = (model) => {
+    const { name, email, message } = model;
 
-  const onSubmit = () => {
     fetch('http://localhost:4000/api/send-email', {
       method: 'POST',
       headers: {
@@ -34,11 +35,11 @@ function ContactSection() {
     <section id='contact-section' className='contact-section' >
       <h2 className='contact-section__header' >Contact me</h2>
       <Panel className='contact-form' >
-        <Form onSubmit={onSubmit} >
+        <Form onSubmit={onSubmit} modelState={modelState} >
           <fieldset className='contact-form__fieldset' >
-            <TextField attr='name' label='Name' value={name} onChange={event => setName(event.target.value)} required ></TextField>
-            <MailField attr='email' label='Email' value={email} onChange={event => setEmail(event.target.value)} required ></MailField>
-            <TextAreaField attr='message' label='Message' value={message} onChange={event => setMessage(event.target.value)} required ></TextAreaField>                
+            <TextField attr='name' label='Name' required ></TextField>
+            <MailField attr='email' label='Email' required ></MailField>
+            <TextAreaField attr='message' label='Message' required ></TextAreaField>                
           </fieldset>
         </Form>
       </Panel>

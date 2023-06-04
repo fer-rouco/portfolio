@@ -6,6 +6,7 @@ export function FormProvider(props) {
   const [fields, setFields] = useState([]);
   const [executeValidation, setExecuteValidation] = useState(props?.validate);
   const [formValid, setFormValid] = useState(undefined);
+  const [model, setModel] = props?.modelState;
 
   const initializeField = (attr) => {
     addField(attr, true);
@@ -44,14 +45,14 @@ export function FormProvider(props) {
     if (formValid) {
       const fieldsValid = fields.length > 0 && !fields.some(field => !field.valid);
       if (fieldsValid) {
-        props.handleOnValid();
+        props.handleOnValid(model);
       }
   
       setFormValid(undefined);
     }
   }, [formValid]);
 
-  return <FormContext.Provider value={{ executeValidation, isValid, setValid, initializeField }} {...props} />;
+  return <FormContext.Provider value={{ executeValidation, isValid, setValid, initializeField, model, setModel }} {...props} />;
 }
 
 export function useForm() {

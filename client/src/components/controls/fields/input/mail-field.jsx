@@ -1,3 +1,4 @@
+import { useForm } from "../../../containers/form-context";
 import InputField from "./input-field";
 
 function MailField({
@@ -8,6 +9,15 @@ function MailField({
   onChange,
   required 
 }) {
+  const { model } = useForm();
+
+  const getValue = () => {
+    if (model) {
+      return model[attr];
+    }
+    return value;
+  }
+  
   return (
     <InputField 
       type='email'
@@ -17,7 +27,7 @@ function MailField({
       errorLabel={errorLabel || 'Please enter a valid email address.'}
       onChange={onChange}
       required={required} 
-      validationFn={() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) }
+      validationFn={() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(getValue()) }
     >
     </InputField>
   );
