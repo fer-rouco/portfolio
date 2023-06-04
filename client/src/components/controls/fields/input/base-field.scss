@@ -38,7 +38,10 @@
 
     &__required {
       color: var(--main-red);
-      margin-left: 1rem;
+      margin-left: .5rem;
+      font-size: 0.8rem;
+      top: 0;
+      position: absolute;
     }
   }
 }

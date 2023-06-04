@@ -31,12 +31,19 @@ function BaseField({
     }
   }, [executeValidation]);
 
+  const hideRequiredAsterisk = () => {
+    return (
+      !required ||
+      !isValid(attr) /*||
+      (isValid(attr) && executeValidation && Boolean(value.trim()))*/
+    );
+  }
 
   return (
     <div className={`input-container ${containerClass}`} >
       <div className='label-container' >
         <label htmlFor={`input-${attr}`} >{label} :</label>
-        <span className={`label-container__required ${(!required || !isValid(attr)) ? 'hide' : '' }`} >*</span>
+        <span className={`label-container__required ${ hideRequiredAsterisk() ? 'hide' : '' }`} >*</span>
         <span className={`label-container__error-label ${(isValid(attr)) ? 'hide' : '' }`} >{errorLabel || `Please enter your ${label.toLowerCase()}.`}</span>
       </div>
       {children}
