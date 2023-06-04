@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FormProvider } from './form-context';
+import SubmitButton from '../controls/buttons/submit-button';
 
 const Form = ({ children, onSubmit }) => {
   const [validate, setValidate] = useState(false);
@@ -19,7 +20,8 @@ const Form = ({ children, onSubmit }) => {
   return (
     <FormProvider validate={validate} handleOnValid={handleOnValid} >
       <form onSubmit={executeValidation} noValidate>
-        {children}
+        { children }
+        { onSubmit && <SubmitButton></SubmitButton> }
       </form>
     </FormProvider>
   );

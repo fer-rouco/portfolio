@@ -1,11 +1,10 @@
 import { useState } from "react";
+import Panel from "../containers/panel";
+import Form from "../containers/form";
 import TextField from "../controls/fields/input/text-field";
 import MailField from "../controls/fields/input/mail-field";
 import TextAreaField from "../controls/fields/input/textarea-field";
-import SubmitButton from "../controls/buttons/submit-button";
 import "./contact-section.scss";
-import Panel from "../containers/panel";
-import Form from "../containers/form";
 
 function ContactSection() {
   const [name, setName] = useState('');
@@ -39,9 +38,8 @@ function ContactSection() {
           <fieldset className='contact-form__fieldset' >
             <TextField attr='name' label='Name' value={name} onChange={event => setName(event.target.value)} required ></TextField>
             <MailField attr='email' label='Email' value={email} onChange={event => setEmail(event.target.value)} required ></MailField>
-            <TextAreaField attr='message' label='Message' value={message} onChange={event => setMessage(event.target.value)} required ></TextAreaField>                   
+            <TextAreaField attr='message' label='Message' value={message} onChange={event => setMessage(event.target.value)} required ></TextAreaField>                
           </fieldset>
-          <SubmitButton></SubmitButton>
         </Form>
       </Panel>
     </section>
