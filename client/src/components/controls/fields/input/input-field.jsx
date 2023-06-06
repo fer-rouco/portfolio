@@ -1,6 +1,7 @@
-import { useForm } from "../../../containers/form-context";
+import { useModel } from "../../../../contexts/model-context";
 import BaseField from "./base-field";
 import "./input-field.scss";
+import modelHelper from "./model-helper";
 
 
 function InputField({
@@ -11,27 +12,10 @@ function InputField({
   errorLabel,
   onChange,
   required,
+  validate,
   validationFn
 }) {
-  const { model, setModel } = useForm();
-
-  const onValueChange = (event) => {
-    if (model) {
-      const modelWithChange = {...model};
-      modelWithChange[attr] = event.target.value;
-      setModel(modelWithChange);
-    } else {
-      onChange();
-    }
-
-  }
-
-  const getValue = () => {
-    if (model) {
-      return model[attr];
-    }
-    return value;
-  }
+  const { onValueChange, getValue } = modelHelper({ modelState: useModel(), attr, value, onChange });
 
   return (
     <BaseField
@@ -40,6 +24,7 @@ function InputField({
       value={getValue()}
       errorLabel={errorLabel}
       required={required}
+      validate={validate}
       validationFn={validationFn}
     >
       <input id={`input-${attr}`} type={type} value={getValue()} onChange={onValueChange} autoComplete="off" noValidate />

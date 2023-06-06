@@ -1,41 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { useModel } from '../../contexts/model-context';
 
 const FormContext = React.createContext(() => {});
 
 export function FormProvider(props) {
-  const [fields, setFields] = useState([]);
   const [executeValidation, setExecuteValidation] = useState(props?.validate);
   const [formValid, setFormValid] = useState(undefined);
-  const [model, setModel] = props?.modelState;
-
-  const initializeField = (attr) => {
-    addField(attr, true);
-  }
-
-  const addField = (attr, valid) => {
-    const field = getField(attr);
-    if (!field) {
-      setFields([ 
-        ...fields, 
-        { attr, valid }
-      ]);
-    }
-  }
-
-  const getField = (attr) => {
-    return fields.filter(field => field.attr === attr)[0];
-  }
-
-  const setValid = (attr, valid) => {
-    const field = getField(attr);
-    field.valid = valid;
-    setFormValid(valid);
-  }
-
-  const isValid = (attr) => {
-    const field = getField(attr);
-    return field?.valid;
-  }
+  const { model, getFieldAttributeList } = useModel();
 
   useEffect(() => {
     setExecuteValidation(props?.validate);
@@ -43,7 +14,8 @@ export function FormProvider(props) {
 
   useEffect(() => {
     if (formValid) {
-      const fieldsValid = fields.length > 0 && !fields.some(field => !field.valid);
+      const fieldAttributeList = getFieldAttributeList();
+      const fieldsValid = fieldAttributeList.length > 0 && !fieldAttributeList.some(fieldAttribute => !fieldAttribute.valid);
       if (fieldsValid) {
         props.handleOnValid(model);
       }
@@ -52,7 +24,7 @@ export function FormProvider(props) {
     }
   }, [formValid]);
 
-  return <FormContext.Provider value={{ executeValidation, isValid, setValid, initializeField, model, setModel }} {...props} />;
+  return <FormContext.Provider value={{ executeValidation, setFormValid }} {...props} />;
 }
 
 export function useForm() {

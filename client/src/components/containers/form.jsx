@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FormProvider } from './form-context';
 import SubmitButton from '../controls/buttons/submit-button';
+import { ModelProvider } from '../../contexts/model-context';
 
 const Form = ({ children, onSubmit, modelState }) => {
   const [validate, setValidate] = useState(false);
@@ -18,12 +19,14 @@ const Form = ({ children, onSubmit, modelState }) => {
   }
 
   return (
-    <FormProvider validate={validate} handleOnValid={handleOnValid} modelState={modelState} >
-      <form onSubmit={executeValidation} noValidate>
-        { children }
-        { onSubmit && <SubmitButton></SubmitButton> }
-      </form>
-    </FormProvider>
+    <ModelProvider modelState={modelState} >
+      <FormProvider validate={validate} handleOnValid={handleOnValid} >
+        <form onSubmit={executeValidation} noValidate>
+          { children }
+          { onSubmit && <SubmitButton></SubmitButton> }
+        </form>
+      </FormProvider>
+    </ModelProvider>
   );
 };
 

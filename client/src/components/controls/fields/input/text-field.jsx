@@ -6,7 +6,8 @@ function TextField({
   label,
   errorLabel,
   onChange,
-  required 
+  required,
+  validate
 }) {
   return (
     <InputField
@@ -17,6 +18,7 @@ function TextField({
       errorLabel={errorLabel}
       onChange={onChange}
       required={required}
+      validate={validate}
     >
     </InputField>
   );

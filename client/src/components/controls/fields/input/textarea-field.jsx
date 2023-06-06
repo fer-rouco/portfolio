@@ -1,5 +1,6 @@
-import { useForm } from "../../../containers/form-context";
+import { useModel } from "../../../../contexts/model-context";
 import BaseField from "./base-field";
+import modelHelper from "./model-helper";
 import "./textarea-field.scss";
 
 function TextAreaField({
@@ -9,28 +10,11 @@ function TextAreaField({
   errorLabel,
   onChange,
   required,
+  validate,
   cols,
   rows
 }) {
-  const { model, setModel } = useForm();
-
-  const onValueChange = (event) => {
-    if (model) {
-      const modelWithChange = {...model};
-      modelWithChange[attr] = event.target.value;
-      setModel(modelWithChange);
-    } else {
-      onChange();
-    }
-
-  }
-
-  const getValue = () => {
-    if (model) {
-      return model[attr];
-    }
-    return value;
-  }
+  const { onValueChange, getValue } = modelHelper({ modelState: useModel(), attr, value, onChange });
 
   return (
     <BaseField
@@ -39,6 +23,7 @@ function TextAreaField({
       value={getValue()}
       errorLabel={errorLabel}
       required={required}
+      validate={validate}
       containerClass='textarea-container'
     >
       <textarea id={`input-${attr}`} value={getValue()} onChange={onValueChange} cols={cols} rows={rows} autoComplete="off" noValidate />

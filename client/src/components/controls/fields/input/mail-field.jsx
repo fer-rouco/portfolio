@@ -1,5 +1,6 @@
-import { useForm } from "../../../containers/form-context";
+import { useModel } from "../../../../contexts/model-context";
 import InputField from "./input-field";
+import modelHelper from "./model-helper";
 
 function MailField({
   attr,
@@ -7,16 +8,10 @@ function MailField({
   label,
   errorLabel,
   onChange,
-  required 
+  required,
+  validate
 }) {
-  const { model } = useForm();
-
-  const getValue = () => {
-    if (model) {
-      return model[attr];
-    }
-    return value;
-  }
+  const { getValue } = modelHelper({ modelState: useModel(), attr, value, onChange });
   
   return (
     <InputField 
@@ -26,7 +21,8 @@ function MailField({
       label={label}
       errorLabel={errorLabel || 'Please enter a valid email address.'}
       onChange={onChange}
-      required={required} 
+      required={required}
+      validate={validate}
       validationFn={() => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(getValue()) }
     >
     </InputField>

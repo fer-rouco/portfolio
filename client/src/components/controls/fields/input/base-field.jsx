@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useForm } from "../../../containers/form-context";
+import { useModel } from "../../../../contexts/model-context";
 import "./base-field.scss";
 
 function BaseField({
@@ -10,32 +11,44 @@ function BaseField({
   errorLabel,
   containerClass,
   required,
+  validate,
   validationFn
 }) {
-  const { executeValidation, initializeField, setValid, isValid } = useForm();
+  const { setFormValid, executeValidation } = useForm();
+  const { initializeField, setValid, isValid } = useModel();
 
   useEffect(() => {
     initializeField && initializeField(attr);
   });
 
   useEffect(() => {
-    if (!executeValidation) {
+    if (!executeValidation && !validate) {
       return;
     }
 
+    doValidate();
+  }, [executeValidation, validate]);
+
+  const doValidate = () => {
+    let valid = false;
     if (validationFn) {
-      setValid(attr, validationFn());
+      valid = validationFn();
     }
     else if (required) {
-      setValid(attr, Boolean(value.trim()));
+      valid = Boolean(value.trim());
     }
-  }, [executeValidation]);
+    setValid(attr, valid);
+
+    if (setFormValid) {
+      setFormValid(valid)
+    }
+  }
 
   const hideRequiredAsterisk = () => {
     return (
       !required ||
       !isValueValid(attr) /*||
-      (isValid(attr) && executeValidation && Boolean(value.trim()))*/
+      (isValid(attr) && runValidation && Boolean(value.trim()))*/
     );
   }
   
