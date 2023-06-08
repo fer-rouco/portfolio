@@ -1,13 +1,13 @@
 .input-container {
   min-height: 4.5rem;
   width: 100%;
+  color: var(--main-input-color);
   background-color: var(--main-input-background-color);
   padding: 7px;
   border: 2px solid var(--main-white);
   border-radius: 1rem;
 
   position: relative;
-  color: var(--main-input-color);
 
   &:focus-within {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.4);

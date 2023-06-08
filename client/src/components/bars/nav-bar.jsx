@@ -2,11 +2,11 @@ import "./nav-bar.scss";
 
 function NavItem({text, href}) {
   return (
-    <a className='nav__link' href={href} >
-      <li className='nav__item'>
+    <li className='nav__item'>
+      <a className='nav__link' href={href} name='nav-item' tabIndex="0">
         {text}
-      </li>
-    </a>
+      </a>
+    </li>
   );
 }
 

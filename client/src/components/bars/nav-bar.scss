@@ -19,22 +19,8 @@
 
   &__item {
     color: #dfdfe2;
-    margin: .5rem .2rem;
-    padding: .5rem 1rem;
+    margin: .8rem .2rem;
     display: block;
-
-    &:hover {
-      background-color: var(--main-blue);
-      cursor: pointer;
-      border-radius: 1rem;
-      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
-    }
-
-    &:active {
-      box-shadow: none;
-      margin: .5rem .3rem;
-      padding: .5rem .9rem;
-    }   
   }
 
   &__link {
@@ -42,5 +28,18 @@
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
+    padding: .5rem 1rem;
+
+    &:hover, &:focus {
+      background-color: var(--main-blue);
+      cursor: pointer;
+      outline: none;
+      border-radius: 1rem;
+      box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      box-shadow: none;
+    }   
   }
 }
