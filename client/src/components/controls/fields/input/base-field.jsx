@@ -57,7 +57,7 @@ function BaseField({
   }
 
   return (
-    <div className={`input-container ${containerClass}`} >
+    <div className={`input-container ${containerClass || ''}`} >
       <div className='label-container' >
         <label htmlFor={`input-${attr}`} >{label} :</label>
         <span className={`label-container__required ${ hideRequiredAsterisk() ? 'hide' : '' }`} >*</span>
