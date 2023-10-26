@@ -15,8 +15,8 @@ function FooterContet() {
   return (
     <>
       <div className="social-links" >
-        <ProfileLink id='LinkedIn' icon={faLinkedin} href="https://www.linkedin.com/in/fernando-nicolás-rouco-a1066262/"></ProfileLink>
-        <ProfileLink id='GitHub'   icon={faGithub}   href="https://github.com/fernet87"></ProfileLink>
+        <ProfileLink id='LinkedIn' icon={faLinkedin} href="https://www.linkedin.com/in/fer-rouco"></ProfileLink>
+        <ProfileLink id='GitHub'   icon={faGithub}   href="https://github.com/fer-rouco"></ProfileLink>
         <ProfileLink id='Mail'     icon={faEnvelope} href="mailto:rouco.fernando@gmail.com"></ProfileLink>
       </div>
       <div className='copyrights' >
