@@ -4,9 +4,19 @@ import "./projects-section.scss";
 
 const PROJECTS = [
   {
+    key: 'minesweeper',
+    title:'Minesweeper',
+    description:'Puzzle game with the aim of clear an abstract minefield without detonating a mine.',
+    srcImg:'https://raw.githubusercontent.com/fer-rouco/minesweeper/main/src/assets/images/Board.png',
+    altImg:'Minesweeper Image',
+    hrefCode:'https://github.com/fer-rouco/minesweeper/',
+    hrefLive:'https://fer-rouco.github.io/minesweeper/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
+  },
+  {
     key: 'markdown-previewer',
     title:'Markdown Previewer',
-    description:'App to edit and previsualize your markdowns.',
+    description:'Edit and previsualize your markdowns with this app.',
     srcImg:'https://raw.githubusercontent.com/fer-rouco/markdown-previewer/main/src/assets/screenshot.png',
     altImg:'Markdow Previewer Image',
     hrefCode:'https://github.com/fer-rouco/markdown-previewer/',
@@ -16,7 +26,7 @@ const PROJECTS = [
   {
     key: 'drum-machine',
     title:'Drum Machine',
-    description:'App to play the drum with your keyboard.',
+    description:'Are you a musician? Play the drum with your keyboard using this App.',
     srcImg:'https://raw.githubusercontent.com/fer-rouco/drum-machine/main/src/assets/screenshot.png',
     altImg:'Drum Machine Image',
     hrefCode:'https://github.com/fer-rouco/drum-machine/',
