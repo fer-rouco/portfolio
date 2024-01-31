@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fernet87/portfolio-server.git"
+    "url": "git+https://github.com/fer-rouco/portfolio-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fernet87/portfolio-server/issues"
+    "url": "https://github.com/fer-rouco/portfolio-server/issues"
   },
-  "homepage": "https://github.com/fernet87/portfolio-server#readme",
+  "homepage": "https://github.com/fer-rouco/portfolio-server#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
   },
