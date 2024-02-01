@@ -9,14 +9,14 @@
   justify-content: space-between;
 
   &:hover {
-    -webkit-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    transform: scale(1.04);
   }
 
   &__title {
     color: var(--main-blue);
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: bold;
     text-align: center;
   }
