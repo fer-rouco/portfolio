@@ -16,7 +16,23 @@
   
   .fa-envelope {
     color: var(--main-red);
-  } 
+  }
+
+  .codewars-badge {
+    top: -5px;
+    position: relative;
+    animation: fadeinout 1s linear infinite;
+  }
+
+  @-webkit-keyframes fadeinout {
+    0%,100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+
+  @keyframes fadeinout {
+    0%,100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
 }
 
 .copyrights {
