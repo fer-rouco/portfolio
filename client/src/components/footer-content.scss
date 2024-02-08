@@ -25,13 +25,25 @@
   }
 
   @-webkit-keyframes fadeinout {
-    0%,100% { opacity: 0.4; }
-    50% { opacity: 1; }
+    0%,100% { 
+      opacity: 0.4;
+      width: 110px;
+    }
+    50% { 
+      opacity: 1;
+      width: 120px;
+    }
   }
 
   @keyframes fadeinout {
-    0%,100% { opacity: 0.4; }
-    50% { opacity: 1; }
+    0%,100% {
+      opacity: 0.4;
+      width: 110px;
+    }
+    50% {
+      opacity: 1;
+      width: 120px;
+    }
   }
 }
 
