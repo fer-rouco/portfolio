@@ -59,7 +59,6 @@ function WelcomeSection() {
   }
 
   const renderMainStar = (darkMode) => {
-    const mainStarStyle = darkMode ? "moon" : "sun";
     return (
       (darkMode) ? renderMainStarMoon() : renderMainStarSun()
     );
