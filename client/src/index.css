@@ -55,10 +55,13 @@ html {
 
 /* Base styles */
 
+html, body {
+  overflow-x: hidden 
+} 
+
 body {
   font-family: 'Poppins', sans-serif;
   color:  var(--main-red); /*#091434; */
-  overflow-x: hidden; 
 }
 
 /* 
