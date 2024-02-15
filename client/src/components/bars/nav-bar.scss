@@ -1,7 +1,13 @@
 
 .nav {
   /* background-color: #356598; */ /*#be3144;*/
-  background: linear-gradient(0deg, rgb(118, 201, 255), var(--main-blue));
+  &.light {
+    background: linear-gradient(0deg, rgb(118, 201, 255), var(--main-blue));
+  }
+  &.dark {
+    background: linear-gradient(0deg, rgb(204, 204, 204), var(--main-gray));    
+  }
+  
   color: #F1F1F1;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   padding-right: .2em;
@@ -15,6 +21,39 @@
     margin-block: 0;
     height: 100%;
     gap: .2em;
+
+    & .theme-icon {
+      display: flex;
+      padding-right: 1em;
+      cursor: pointer;
+      
+      @-webkit-keyframes fadeinout-theme-icon {
+        0%,100% { 
+          opacity: 0.4;
+        }
+        50% { 
+          opacity: 1;
+        }
+      }
+    
+      @keyframes fadeinout-theme-icon {
+        0%,100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+
+      &:hover {
+        animation: fadeinout-theme-icon 1s linear infinite; 
+      }
+
+      svg {
+        height: 28px;
+        width: 28px;
+      }
+    }
   }
 
   &__item {
@@ -31,7 +70,12 @@
     padding: .5rem 1rem;
 
     &:hover, &:focus {
-      background-color: var(--main-blue);
+      &.light {
+        background-color: var(--main-blue);
+      }
+      &.dark {
+        background-color: var(--main-green);
+      }
       cursor: pointer;
       outline: none;
       border-radius: 1rem;

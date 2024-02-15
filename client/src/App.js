@@ -1,4 +1,5 @@
 import './App.scss';
+import { ThemeProvider } from './contexts/theme-context';
 import NavBar from './components/bars/nav-bar';
 import WelcomeSection from './components/sections/welcome-section';
 import ProjectsSection from './components/sections/projects-section';
@@ -8,17 +9,19 @@ import FooterContet from './components/footer-content';
 function App() {
   return (
     <>
-      <header>
-        <NavBar></NavBar>
-      </header>
-      <main>
-        <WelcomeSection></WelcomeSection>
-        <ProjectsSection></ProjectsSection>
-        <ContactSection></ContactSection>
-      </main>
-      <footer>
-        <FooterContet></FooterContet>
-      </footer>
+      <ThemeProvider>
+        <header>
+          <NavBar></NavBar>
+        </header>
+        <main>
+          <WelcomeSection></WelcomeSection>
+          <ProjectsSection></ProjectsSection>
+          <ContactSection></ContactSection>
+        </main>
+        <footer>
+          <FooterContet></FooterContet>
+        </footer>
+      </ThemeProvider>
     </>
   );
 }

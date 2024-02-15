@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import "./welcome-section.scss";
+import { useTheme } from '../../contexts/theme-context';
 import { ReactComponent as Waves } from '../../assets/waves.svg';
 import classnames from 'classnames';
+import "./welcome-section.scss";
 
 function getRandomInt(min, max) { 
   min = Math.ceil(min); 
@@ -10,7 +11,7 @@ function getRandomInt(min, max) {
 } 
 
 function WelcomeSection() {
-  const isDarkMode = true;
+  const { theme, isDarkMode } = useTheme();
   const [staticStars, setStaticStars] = useState(null);
   const [shootingStarAnimacion, setShootingStarAnimacion] = useState('');
   const [shootingStarAnimacionRandomTime, setShootingStarAnimacionRandomTime] = useState(0);
@@ -104,7 +105,7 @@ function WelcomeSection() {
       <>
         { staticStars }
         { renderShotingStars() }
-        { renderMainStar(isDarkMode) }
+        { renderMainStar(isDarkMode()) }
       </>
     );
   }
@@ -112,15 +113,15 @@ function WelcomeSection() {
   const renderLightMode = () => {
     return (
       <>
-        { renderMainStar(isDarkMode) }
+        { renderMainStar(isDarkMode()) }
       </>
     );
   }
 
   return (
-    <section id='welcome-section' className={`welcome-section welcome-section-${isDarkMode ? "dark" : "light"}`} >
+    <section id='welcome-section' className={`welcome-section welcome-section-${theme}`} >
       { renderTextContainer() }
-      { (isDarkMode) ? renderDarkMode() : renderLightMode() }
+      { (isDarkMode()) ? renderDarkMode() : renderLightMode() }
       { <Waves></Waves> }
     </section>
   );
