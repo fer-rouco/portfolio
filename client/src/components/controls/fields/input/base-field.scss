@@ -1,11 +1,11 @@
 .input-container {
-  min-height: 4.5rem;
+  min-height: 4.5em;
   width: 100%;
   color: var(--main-input-color);
   background-color: var(--main-input-background-color);
   padding: 7px;
   border: 2px solid var(--main-white);
-  border-radius: 1rem;
+  border-radius: 1em;
 
   position: relative;
 
@@ -15,31 +15,31 @@
   
   input, textarea, select {
     position: absolute;
-    top: 2rem;
-    left: .8rem;
-    font-size: 1.5rem;
+    top: 1.5em;
+    left: .6em;
+    font-size: 1.5em;
     background-color: var(--main-input-background-color);
     border: none;
-    width: calc(100% - 1.6rem);
+    width: calc(100% - 1.6em);
     outline: none;
   }
   
   .label-container {
     font-weight: 900;
     position: absolute;
-    top: .8rem;
-    left: .8rem;
+    top: .8em;
+    left: .8em;
     z-index: 1;
 
     &__error-label {
       color: var(--main-red);
-      margin-left: 1rem;
+      margin-left: 1em;
     }
 
     &__required {
       color: var(--main-red);
-      margin-left: .5rem;
-      font-size: 0.8rem;
+      margin-left: .5em;
+      font-size: 0.8em;
       top: 0;
       position: absolute;
     }
