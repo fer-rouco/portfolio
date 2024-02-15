@@ -20,14 +20,15 @@ function WelcomeSection() {
   }, []);
 
   useEffect(() => {
+    const ANIMATION_DURATION = 3000; // Shuld be consistent with the animation css class
     const intervalo = setInterval(() => {
       setShootingStarAnimacionRandomTime(getRandomInt(2000, 20000)); // Between 2 and 20 seconds
       const shootingStarAnimacionDirection = (getRandomInt(0, 1) === 0) ? 'L' : 'R';
       setShootingStarAnimacion(shootingStarAnimacionDirection);
       setTimeout(() => {
         setShootingStarAnimacion('');
-      }, 3000); // Duración de la animación
-    }, shootingStarAnimacionRandomTime); // Intervalo aleatorio
+      }, ANIMATION_DURATION);
+    }, shootingStarAnimacionRandomTime); // Random interval
 
     return () => clearInterval(intervalo);
   }, [shootingStarAnimacionRandomTime]);
