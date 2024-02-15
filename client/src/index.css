@@ -15,6 +15,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
 /* box-sizing and font sizing */
@@ -78,3 +79,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+
+@media screen and (max-width: 991.98px) {
+  * {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  * {
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  * {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 433px) {
+  * {
+    font-size: 8px;
+  }
+}

@@ -4,7 +4,7 @@
   background: linear-gradient(0deg, rgb(118, 201, 255), var(--main-blue));
   color: #F1F1F1;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-  padding-right: 2rem;
+  padding-right: .2em;
 
   &__list {
     display: flex;
@@ -14,7 +14,7 @@
     padding-inline-start: 0;
     margin-block: 0;
     height: 100%;
-    gap: 2rem;
+    gap: .2em;
   }
 
   &__item {
@@ -25,7 +25,7 @@
 
   &__link {
     color: var(--main-white);
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: bold;
     text-decoration: none;
     padding: .5rem 1rem;

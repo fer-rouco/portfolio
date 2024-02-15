@@ -34,15 +34,17 @@ function ContactSection() {
   return (
     <section id='contact-section' className='contact-section' >
       <h2 className='contact-section__header' >Contact me</h2>
-      <Panel className='contact-form' >
-        <Form onSubmit={onSubmit} modelState={modelState} >
-          <fieldset className='contact-form__fieldset' >
-            <TextField attr='name' label='Name' required ></TextField>
-            <MailField attr='email' label='Email' required ></MailField>
-            <TextAreaField attr='message' label='Message' required ></TextAreaField>                
-          </fieldset>
-        </Form>
-      </Panel>
+      <div className='contact-section__form' >
+        <Panel className='contact-form' >
+          <Form onSubmit={onSubmit} modelState={modelState} >
+            <fieldset className='contact-form__fieldset' >
+              <TextField attr='name' label='Name' required ></TextField>
+              <MailField attr='email' label='Email' required ></MailField>
+              <TextAreaField attr='message' label='Message' required ></TextAreaField>                
+            </fieldset>
+          </Form>
+        </Panel>
+      </div>
     </section>
   );
 }

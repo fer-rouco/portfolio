@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  height: 5rem;
+  height: 5em;
   position: fixed;
   z-index: 2;
 }
@@ -8,8 +8,8 @@ header {
 /* Footer */
 
 footer {
-  min-height: 5rem;
-  height: 5rem;
+  min-height: 5em;
+  height: 5em;
   border: 3px solid var(--main-gray);
   background-color: var(--main-white);
   position: relative;

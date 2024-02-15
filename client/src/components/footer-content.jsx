@@ -5,7 +5,7 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 function ProfileLink({ id, href, children, ariaLabel }) {
   return (
-    <a id={id} target='_blank' href={href} name="profile-link" aria-label={`${ariaLabel} || ${id} Link`} >
+    <a id={id} target='_blank' href={href} name="profile-link" className="profile-link" aria-label={`${ariaLabel} || ${id} Link`} >
       {children}
     </a>
   );
@@ -14,7 +14,7 @@ function ProfileLink({ id, href, children, ariaLabel }) {
 function ProfileLinkIcon({ id, href, icon, ariaLabel }) {
   return (
     <ProfileLink>
-      <FontAwesomeIcon icon={icon} beatFade={true} tabIndex="0" ></FontAwesomeIcon>
+      <FontAwesomeIcon icon={icon} beatFade={true} className="profile-link__icon" tabIndex="0" ></FontAwesomeIcon>
     </ProfileLink>
   );
 }

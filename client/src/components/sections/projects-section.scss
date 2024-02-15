@@ -6,27 +6,29 @@
   color: var(--main-white);
   
   &__header {
-    font-size: 2.5rem;
-    padding-top: 3rem;
-    margin: 0 auto 1.5rem auto;
-    max-width: 35rem;
-    border-bottom: 0.2rem solid;
+    font-size: 3em;
+    padding-top: .5em;
+    margin: 0 auto 0.5em auto;
+    max-width: 14em;
+    border-bottom: 0.1em solid;
     text-align: center;
   }
   
   &__cards {
-    // display: flex;
-    // justify-content: space-evenly;
-    // align-items: center;
-    // flex-direction: row;
-    // overflow-x: auto;
-    // padding: 1.875rem 0;
-    // margin: 20px 0 20px 0;
+    & .react-multiple-carousel__arrow {
+      &::before {
+        font-size: 1.25em;
+      }
+      
+      min-width: 2.6875em;
+      min-height: 2.6875em;
+      z-index: 1;
+    }
 
     &-item {
       display: flex;
       justify-content: center;
-      padding: 30px 0 30px 0;
+      padding: 2em 0 2em 0;
     }
   }  
 }

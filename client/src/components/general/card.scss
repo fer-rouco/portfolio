@@ -1,8 +1,8 @@
 .card {
-  height: 35.625rem;
-  width: 22rem;
-  min-width: 22rem;
-  margin: auto 1rem;
+  height: 35.625em;
+  width: 22em;
+  min-width: 22em;
+  margin: auto 1em;
 
   display: flex;
   flex-direction: column;
@@ -16,37 +16,37 @@
 
   &__title {
     color: var(--main-blue);
-    font-size: 1.7rem;
+    font-size: 1.7em;
     font-weight: bold;
     text-align: center;
   }
 
   &__image-container {
-    height: 18.75rem;
+    height: 18.75em;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0.625rem;
+    margin: 0.625em;
   }
 
   &__image {
-    max-height: 18.75rem;
-    max-width: 19.2rem;
+    max-height: 18.75em;
+    max-width: 19.2em;
   }
 
   &__tag-container {
-    height: 1.5rem;
-    margin: 0.5rem 0 0.5rem;
+    height: 1.5em;
+    margin: 0.5em 0 0.5em;
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.5em;
   }
   
   &__description {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: bold;
     color: var(--main-green);
   
@@ -55,12 +55,12 @@
   
   &__buttons {
     /* position: absolute; */
-    bottom: 1.25rem;
+    bottom: 1.25em;
     display: flex;
     justify-content: space-around;
     flex-wrap: nowrap;
     align-items: center;
-    gap: 0.625rem;
+    gap: 0.625em;
   }
   
   &__buttons > a > button {

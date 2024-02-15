@@ -6,6 +6,14 @@
   justify-content: flex-start;
   gap: 1.25rem;
   
+  .profile-link {
+    display: flex;
+    align-items: center;
+    &__icon {
+      height: 2em;
+    }
+  }
+
   .fa-linkedin {
     color: #0273b1;
   }
@@ -19,38 +27,36 @@
   }
 
   .codewars-badge {
-    top: -5px;
-    position: relative;
     animation: fadeinout 1s linear infinite;
   }
 
   @-webkit-keyframes fadeinout {
     0%,100% { 
       opacity: 0.4;
-      width: 110px;
+      width: 6.875em;
     }
     50% { 
       opacity: 1;
-      width: 120px;
+      width: 7.5em;
     }
   }
 
   @keyframes fadeinout {
     0%,100% {
       opacity: 0.4;
-      width: 110px;
+      width: 6.875em;
     }
     50% {
       opacity: 1;
-      width: 120px;
+      width: 7.5em;
     }
   }
 }
 
 .copyrights {
   position: absolute;
-  font-size: 1.2rem;
-  right: 1rem;
-  top: .5rem;
+  font-size: 1.2em;
+  right: 1em;
+  top: .5em;
   color: var(--main-gray);
 }
