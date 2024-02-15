@@ -87,19 +87,17 @@ function ProjectsSection() {
       items: 3
     },
     tablet: {
-      breakpoint: { max: 1152, min: 768 },  
+      breakpoint: { max: 1152, min: 600 },  
       items: 2
     },
     mobile: {
-      breakpoint: { max: 768, min: 0 },
+      breakpoint: { max: 600, min: 0 },
       items: 1
     }
   };
   return (
     <section id='projects-section' className='projects-section' >
-      
       <h2 className='projects-section__header' >Some things I've worked on</h2>
-
       <div className='projects-section__cards' >
         <Carousel
           showDots={true}
