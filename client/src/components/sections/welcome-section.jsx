@@ -1,17 +1,46 @@
+import { useState, useEffect } from 'react';
 import "./welcome-section.scss";
 import { ReactComponent as Waves } from '../../assets/waves.svg';
+import classnames from 'classnames';
+
+function getRandomInt(min, max) { 
+  min = Math.ceil(min); 
+  max = Math.floor(max); 
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+} 
 
 function WelcomeSection() {
   const isDarkMode = true;
+  const [staticStars, setStaticStars] = useState(null);
+  const [shootingStarAnimacion, setShootingStarAnimacion] = useState('');
+  const [shootingStarAnimacionRandomTime, setShootingStarAnimacionRandomTime] = useState(0);
+
+  useEffect(() => {
+    setStaticStars(renderStaticStars());
+  }, []);
+
+  useEffect(() => {
+    const intervalo = setInterval(() => {
+      setShootingStarAnimacionRandomTime(getRandomInt(2000, 20000)); // Between 2 and 20 seconds
+      const shootingStarAnimacionDirection = (getRandomInt(0, 1) === 0) ? 'L' : 'R';
+      setShootingStarAnimacion(shootingStarAnimacionDirection);
+      setTimeout(() => {
+        setShootingStarAnimacion('');
+      }, 3000); // Duración de la animación
+    }, shootingStarAnimacionRandomTime); // Intervalo aleatorio
+
+    return () => clearInterval(intervalo);
+  }, [shootingStarAnimacionRandomTime]);
 
   const renderStaticStars = () => {
-    const starsQuantity = ((window.innerHeight * window.innerWidth) / 1000) | 1000;
+    let starsQuantity = ((window.innerHeight * window.innerWidth) / 1000) | 1000;
+    starsQuantity = (starsQuantity > 1000) ? 1000 : starsQuantity;
     return (
       [...Array(starsQuantity)].map((x, index) => {
-        const posX = Math.random() * window.innerWidth;
-        const posY = Math.random() * 800;
+        const posX = getRandomInt(0, window.innerWidth);
+        const posY = getRandomInt(0, 800);
         const alfa = Math.random();
-        const dimension = (Math.floor(Math.random() * 5) + 1) + 'px';
+        const dimension = getRandomInt(1, 5) + 'px';
         const style = {
           left: posX + 'px',
           top: posY + 'px',
@@ -25,10 +54,14 @@ function WelcomeSection() {
   }
 
   const renderShotingStars = () => {
+    const classNameSettings = { 
+      'shoting-to-right': shootingStarAnimacion === 'R',
+      'shoting-to-left': shootingStarAnimacion === 'L' 
+    };
+
     return (
       <>
-        <div className="welcome-section__star shoting shoting-to-right" ></div>
-        <div className="welcome-section__star shoting shoting-to-left" ></div>
+        <div className={classnames('welcome-section__star shoting', classNameSettings)} ></div>
       </>
     );
   }
@@ -68,7 +101,7 @@ function WelcomeSection() {
   const renderDarkMode = () => {
     return (
       <>
-        { renderStaticStars() }
+        { staticStars }
         { renderShotingStars() }
         { renderMainStar(isDarkMode) }
       </>
