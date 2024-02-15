@@ -5,8 +5,9 @@ function WelcomeSection() {
   const isDarkMode = true;
 
   const renderStaticStars = () => {
+    const starsQuantity = ((window.innerHeight * window.innerWidth) / 1000) | 1000;
     return (
-      [...Array(1000)].map((x, i) => {
+      [...Array(starsQuantity)].map((x, index) => {
         const posX = Math.random() * window.innerWidth;
         const posY = Math.random() * 800;
         const alfa = Math.random();
@@ -18,7 +19,7 @@ function WelcomeSection() {
           width: dimension,
           height: dimension
         };
-        return <div className="welcome-section__star" style={style} ></div>
+        return <div key={`${index}`} className="welcome-section__star" style={style} ></div>
       })
     );
   }
