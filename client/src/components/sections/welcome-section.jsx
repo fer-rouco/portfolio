@@ -14,7 +14,7 @@ function WelcomeSection() {
   const { theme, isDarkMode } = useTheme();
   const [staticStars, setStaticStars] = useState(null);
   const [shootingStarAnimacion, setShootingStarAnimacion] = useState('');
-  const [shootingStarAnimacionRandomTime, setShootingStarAnimacionRandomTime] = useState(0);
+  const [shootingStarAnimacionRandomTime, setShootingStarAnimacionRandomTime] = useState(5000);
 
   useEffect(() => {
     setStaticStars(renderStaticStars());
@@ -23,7 +23,7 @@ function WelcomeSection() {
   useEffect(() => {
     const ANIMATION_DURATION = 3000; // Shuld be consistent with the animation css class
     const intervalo = setInterval(() => {
-      setShootingStarAnimacionRandomTime(getRandomInt(2000, 20000)); // Between 2 and 20 seconds
+      setShootingStarAnimacionRandomTime(getRandomInt(2000, 10000)); // Between 2 and 10 seconds
       const shootingStarAnimacionDirection = (getRandomInt(0, 1) === 0) ? 'L' : 'R';
       setShootingStarAnimacion(shootingStarAnimacionDirection);
       setTimeout(() => {
@@ -56,14 +56,30 @@ function WelcomeSection() {
   }
 
   const renderShotingStars = () => {
-    const classNameSettings = { 
-      'shoting-to-right': shootingStarAnimacion === 'R',
-      'shoting-to-left': shootingStarAnimacion === 'L' 
-    };
+    if (!shootingStarAnimacion) {
+      return;
+    }
+
+    const shootingStarAnimacionToRight = shootingStarAnimacion === 'R';
+    const posX = getRandomInt(0, window.innerWidth);
+    const posY = getRandomInt(0, 500);
+    let classNameSettings = null, style = null;
+
+    if (shootingStarAnimacionToRight) {
+      classNameSettings = { 'shoting-to-right': true };
+
+      style = { left: posX + 'px', top: posY + 'px' };
+    }
+    else {
+      classNameSettings = { 'shoting-to-left': true };
+
+      style = { right: posX + 'px', top: posY + 'px' };
+    }
+
 
     return (
       <>
-        <div className={classnames('welcome-section__star shoting', classNameSettings)} ></div>
+        <div className={classnames('welcome-section__star shoting', classNameSettings)} style={style} ></div>
       </>
     );
   }

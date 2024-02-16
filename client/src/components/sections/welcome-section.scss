@@ -116,11 +116,11 @@
       animation: shoting-animate-to-right 3s linear infinite;
 
       &::before {
-        background: linear-gradient(45deg, #fff, transparent);
         content: '';
+        background: linear-gradient(45deg, #fff, transparent);
         position: absolute;
-        width: 300px;
         height: 1px;
+        width: 300px;
       }
     }
     
