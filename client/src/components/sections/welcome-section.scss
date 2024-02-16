@@ -18,7 +18,7 @@
   }
 
   &-light {
-    background: linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));
+    background: linear-gradient(45deg, rgb(247, 255, 222), rgb(118, 201, 255));
   }
 
   &__text-container {
@@ -38,17 +38,18 @@
   }
 
   &__main-star {
-    width: 10rem;
-    height: 10rem;
+    width: 10em;
+    height: 10em;
     border-radius: 50%;
     position: absolute;
-    top: 1.25rem;
-    right: -3.75rem;
+    top: 1.25em;
+    right: -3.75em;
     z-index: -1;
   }
 
   &__sun {
     background-color: #ffff00;
+    border: 0.1875rem solid #ffc000;
   }
 
   &__moon {

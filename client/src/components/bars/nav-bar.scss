@@ -5,7 +5,7 @@
     background: linear-gradient(0deg, rgb(118, 201, 255), var(--main-blue));
   }
   &.dark {
-    background: linear-gradient(0deg, rgb(204, 204, 204), var(--main-gray));    
+    background: linear-gradient(0deg, var(--main-gray), var(--main-blue));    
   }
   
   color: #F1F1F1;
@@ -24,7 +24,7 @@
 
     & .theme-icon {
       display: flex;
-      padding-right: 1em;
+      padding: 0 1em 0 1em;
       cursor: pointer;
       
       @-webkit-keyframes fadeinout-theme-icon {
@@ -50,8 +50,8 @@
       }
 
       svg {
-        height: 28px;
-        width: 28px;
+        height: 1.75em;
+        width: 1.75em;
       }
     }
   }
@@ -74,7 +74,7 @@
         background-color: var(--main-blue);
       }
       &.dark {
-        background-color: var(--main-green);
+        background-color: var(--main-blue);
       }
       cursor: pointer;
       outline: none;
