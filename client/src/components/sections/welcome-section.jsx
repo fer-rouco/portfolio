@@ -58,24 +58,28 @@ function WelcomeSection() {
   const addToCloudsCount = () => {
     setCloudsCount(prevCount => prevCount + 1);
   };
+  
+  const renderStaticStar = (key, className) => {
+    const posX = getRandomInt(0, window.innerWidth);
+    const posY = getRandomInt(0, 800);
+    const alfa = Math.random();
+    const dimension = getRandomInt(1, 5) + 'px';
+    const style = {
+      left: posX + 'px',
+      top: posY + 'px',
+      opacity: alfa,
+      width: dimension,
+      height: dimension
+    };
+    return <div key={`${key}`} className={`welcome-section__stars ${className}`} style={style} ></div>
+  }
 
   const renderStaticStars = () => {
     let starsQuantity = ((window.innerHeight * window.innerWidth) / 1000) | 1000;
     starsQuantity = (starsQuantity > 1000) ? 1000 : starsQuantity;
     return (
       [...Array(starsQuantity)].map((x, index) => {
-        const posX = getRandomInt(0, window.innerWidth);
-        const posY = getRandomInt(0, 800);
-        const alfa = Math.random();
-        const dimension = getRandomInt(1, 5) + 'px';
-        const style = {
-          left: posX + 'px',
-          top: posY + 'px',
-          opacity: alfa,
-          width: dimension,
-          height: dimension
-        };
-        return <div key={`${index}`} className="welcome-section__stars" style={style} ></div>
+        return renderStaticStar(index);
       })
     );
   }
@@ -162,6 +166,7 @@ function WelcomeSection() {
         { staticStars }
         { renderShotingStars() }
         { renderMainStar(isDarkMode()) }
+        { renderStaticStar(0, 'shining') }
       </>
     );
   }

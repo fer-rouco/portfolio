@@ -293,6 +293,46 @@
         opacity: 0;
       }
     }
+
+    &.shining {
+      animation: shine 1.5s infinite ease-in-out;
+
+      &::before, &::after {
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background-color: gold;
+      }
+      
+      &::before {
+        width: 100%;
+        height: 100%;
+        opacity: 0.6;
+        animation: pulsate 1.5s infinite ease-in-out;
+      }
+      
+      &::after {
+        width: 50%;
+        height: 50%;
+      }
+
+      @keyframes shine {
+        from {
+          transform: scale(0.4);
+        }
+        to {
+          transform: scale(1.2);
+        }
+      }
+
+      @keyframes pulsate {
+        from {
+          opacity: 0.6;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    }
   }
 
   &__waves {
