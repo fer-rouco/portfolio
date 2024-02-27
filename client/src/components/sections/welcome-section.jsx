@@ -12,16 +12,37 @@ function getRandomInt(min, max) {
 
 function WelcomeSection() {
   const { theme, isDarkMode } = useTheme();
+
+  // Light Mode States
+  const [cloudsCount, setCloudsCount] = useState(0);
+
+  // Dark Mode States
   const [staticStars, setStaticStars] = useState(null);
   const [shootingStarAnimacion, setShootingStarAnimacion] = useState('');
   const [shootingStarAnimacionRandomTime, setShootingStarAnimacionRandomTime] = useState(5000);
+
+  const addToCloudsCount = () => {
+    setCloudsCount(prevCount => prevCount + 1);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (cloudsCount < 8) {
+        addToCloudsCount();
+      } else {
+        clearInterval(interval);
+      }
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [cloudsCount]);
 
   useEffect(() => {
     setStaticStars(renderStaticStars());
   }, []);
 
   useEffect(() => {
-    const ANIMATION_DURATION = 3000; // Shuld be consistent with the animation css class
+    const ANIMATION_DURATION = 2600; // Shuld be consistent with the animation css class
     const intervalo = setInterval(() => {
       setShootingStarAnimacionRandomTime(getRandomInt(2000, 10000)); // Between 2 and 10 seconds
       const shootingStarAnimacionDirection = (getRandomInt(0, 1) === 0) ? 'L' : 'R';
@@ -50,7 +71,7 @@ function WelcomeSection() {
           width: dimension,
           height: dimension
         };
-        return <div key={`${index}`} className="welcome-section__star" style={style} ></div>
+        return <div key={`${index}`} className="welcome-section__stars" style={style} ></div>
       })
     );
   }
@@ -79,7 +100,22 @@ function WelcomeSection() {
 
     return (
       <>
-        <div className={classnames('welcome-section__star shoting', classNameSettings)} style={style} ></div>
+        <div className={classnames('welcome-section__stars shoting', classNameSettings)} style={style} ></div>
+      </>
+    );
+  }
+
+  const renderClouds = () => {
+    const clouds = Array.from({ length: cloudsCount }).map((_, cloudsCountIndex) => {
+      let xIndex = (cloudsCountIndex + 1 > 5) ? (cloudsCountIndex + 1) - 5 : cloudsCountIndex + 1;
+      return (<div className={`cloud x${xIndex}`}></div>)
+    });
+
+    return (
+      <>
+        <div className="welcome-section__clouds">
+          { clouds }
+        </div>
       </>
     );
   }
@@ -129,6 +165,7 @@ function WelcomeSection() {
   const renderLightMode = () => {
     return (
       <>
+        { renderClouds() }
         { renderMainStar(isDarkMode()) }
       </>
     );
