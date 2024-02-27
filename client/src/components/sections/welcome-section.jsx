@@ -21,9 +21,9 @@ function WelcomeSection() {
   const [shootingStarAnimacion, setShootingStarAnimacion] = useState('');
   const [shootingStarAnimacionRandomTime, setShootingStarAnimacionRandomTime] = useState(5000);
 
-  const addToCloudsCount = () => {
-    setCloudsCount(prevCount => prevCount + 1);
-  };
+  useEffect(() => {
+    setCloudsCount(0);
+  }, [theme]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -54,6 +54,10 @@ function WelcomeSection() {
 
     return () => clearInterval(intervalo);
   }, [shootingStarAnimacionRandomTime]);
+
+  const addToCloudsCount = () => {
+    setCloudsCount(prevCount => prevCount + 1);
+  };
 
   const renderStaticStars = () => {
     let starsQuantity = ((window.innerHeight * window.innerWidth) / 1000) | 1000;
