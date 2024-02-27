@@ -116,7 +116,7 @@ function WelcomeSection() {
   const renderClouds = () => {
     const clouds = Array.from({ length: cloudsCount }).map((_, cloudsCountIndex) => {
       let xIndex = (cloudsCountIndex + 1 > 5) ? (cloudsCountIndex + 1) - 5 : cloudsCountIndex + 1;
-      return (<div className={`cloud x${xIndex}`}></div>)
+      return (<div key={`cloud_${cloudsCountIndex}`} className={`cloud x${xIndex}`}></div>)
     });
 
     return (
