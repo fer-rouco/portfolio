@@ -27,30 +27,13 @@
   }
 
   .codewars-badge {
-    animation: fadeinout 1s linear infinite;
+    animation: fadeinout 1s linear infinite, transform-scale-xy 1s ease-in-out infinite;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
   }
 
-  @-webkit-keyframes fadeinout {
-    0%,100% { 
-      opacity: 0.4;
-      width: 6.875em;
-    }
-    50% { 
-      opacity: 1;
-      width: 7.5em;
-    }
-  }
-
-  @keyframes fadeinout {
-    0%,100% {
-      opacity: 0.4;
-      width: 6.875em;
-    }
-    50% {
-      opacity: 1;
-      width: 7.5em;
-    }
-  }
 }
 
 .copyrights {

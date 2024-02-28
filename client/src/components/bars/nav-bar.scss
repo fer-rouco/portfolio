@@ -27,27 +27,9 @@
       padding: 0 1em 0 1em;
       cursor: pointer;
       opacity: 0.4;
-      
-      @-webkit-keyframes fadeinout-theme-icon {
-        0%,100% { 
-          opacity: 0.4;
-        }
-        50% { 
-          opacity: 1;
-        }
-      }
-    
-      @keyframes fadeinout-theme-icon {
-        0%,100% {
-          opacity: 0.4;
-        }
-        50% {
-          opacity: 1;
-        }
-      }
 
       &:hover {
-        animation: fadeinout-theme-icon 1s linear infinite; 
+        animation: fadeinout 1s linear infinite, transform-scale-xy 1s ease-in-out infinite;
       }
 
       svg {

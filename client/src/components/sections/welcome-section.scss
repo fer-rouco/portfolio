@@ -50,6 +50,7 @@
   &__sun {
     background-color: #ffff00;
     border: 0.1875rem solid #ffc000;
+    animation: transform-scale-xy 1s ease-in-out infinite;;
   }
 
   &__moon {

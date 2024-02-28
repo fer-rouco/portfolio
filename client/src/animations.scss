@@ -1,0 +1,40 @@
+
+// ##### fadeinout #####
+
+@-webkit-keyframes fadeinout {
+  0%,100% { 
+    opacity: 0.4;
+  }
+  50% { 
+    opacity: 1;
+  }
+}
+
+@keyframes fadeinout {
+  0%,100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+// ##### transform-scale-xy #####
+
+@-webkit-keyframes transform-scale-xy {
+  0%,100% { 
+    transform: scale(0.96);
+  }
+  50% { 
+    transform: scale(1);
+  }
+}
+
+@keyframes transform-scale-xy {
+  0%,100% { 
+    transform: scale(0.96);
+  }
+  50% { 
+    transform: scale(1);
+  }
+}
