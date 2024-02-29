@@ -50,7 +50,39 @@
   &__sun {
     background-color: #ffff00;
     border: 0.1875rem solid #ffc000;
-    animation: transform-scale-xy 1s ease-in-out infinite;;
+    animation: transform-scale-xy 1s ease-in-out infinite;
+    .ray-of-sunshine {
+      height: 0.25em;
+      width: 5em;
+      background: linear-gradient(90deg, #88DDFF, #FFFF00);
+      position: relative;
+      opacity: 0.2;
+      right: 0;    
+
+      &.x1 {
+        top: 4.25em;
+        transform: translateX(-5.5em)  rotate(3deg);
+        -webkit-transform: translateX(-5.5em)  rotate(3deg);
+      }
+
+      &.x2 {
+        top: 7.8125em;
+        transform: translateX(-4.75em)  rotate(-25deg);
+        -webkit-transform: translateX(-4.75em)  rotate(-25deg);
+      }
+
+      &.x3 {
+        top: 10.8125em;
+        transform: translateX(-1.75em)  rotate(-60deg);
+        -webkit-transform: translateX(-1.75em)  rotate(-60deg);
+      }
+
+      &.x4 {
+        top: 11.75em;
+        transform: translateX(2.1875em) rotate(-90deg);
+        -webkit-transform: translateX(2.1875em) rotate(-90deg);
+      }
+    }
   }
 
   &__moon {

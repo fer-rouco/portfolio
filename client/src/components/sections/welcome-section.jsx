@@ -150,7 +150,12 @@ function WelcomeSection() {
 
   const renderMainStarSun = (darkMode) => {
     return (
-      <div className={`welcome-section__main-star welcome-section__sun`}></div>
+      <div className={`welcome-section__main-star welcome-section__sun`}>
+        <div className='ray-of-sunshine x1'></div>
+        <div className='ray-of-sunshine x2'></div>
+        <div className='ray-of-sunshine x3'></div>
+        <div className='ray-of-sunshine x4'></div>
+      </div>
     );
   }
 
