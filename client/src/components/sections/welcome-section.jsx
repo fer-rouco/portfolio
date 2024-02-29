@@ -59,9 +59,9 @@ function WelcomeSection() {
     setCloudsCount(prevCount => prevCount + 1);
   };
   
-  const renderStaticStar = (key, className) => {
+  const renderStaticStar = (key, className, styleParam) => {
     const posX = getRandomInt(0, window.innerWidth);
-    const posY = getRandomInt(0, 800);
+    const posY = getRandomInt(0, window.innerHeight);
     const alfa = Math.random();
     const dimension = getRandomInt(1, 5) + 'px';
     const style = {
@@ -71,7 +71,7 @@ function WelcomeSection() {
       width: dimension,
       height: dimension
     };
-    return <div key={`${key}`} className={`welcome-section__stars ${className}`} style={style} ></div>
+    return <div key={`${key}`} className={`welcome-section__stars ${className}`} style={styleParam ? styleParam : style} ></div>
   }
 
   const renderStaticStars = () => {
@@ -166,12 +166,24 @@ function WelcomeSection() {
   }
 
   const renderDarkMode = () => {
+    const posX = getRandomInt(0, window.innerWidth);
+    const posY = getRandomInt(0, 500);
+    const alfa = Math.random();
+    const dimensionInt = getRandomInt(3, 6);
+    const shiningAnimationStyle = {
+      left: posX + 'px',
+      top: posY + 'px',
+      opacity: alfa,
+      width: dimensionInt * 2 + 'px',
+      height: dimensionInt * 2 + 'px'
+    };
+
     return (
       <>
         { staticStars }
         { renderShotingStars() }
         { renderMainStar(isDarkMode()) }
-        { renderStaticStar(0, 'shining') }
+        { renderStaticStar(0, 'shining', shiningAnimationStyle) }
       </>
     );
   }
