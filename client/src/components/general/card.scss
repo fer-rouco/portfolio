@@ -16,9 +16,14 @@
 
   &__title {
     color: var(--main-blue);
-    font-size: 1.7em;
+    font-size: 1.6em;
     font-weight: bold;
     text-align: center;
+
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__image-container {
