@@ -129,10 +129,11 @@ function WelcomeSection() {
   }
 
   const renderTextContainer = () => {
+    const darkModeClass = isDarkMode() ? 'dark' : 'light';
     return (
       <div className='welcome-section__text-container'>
-        <h1 className='welcome-section__text-hi' >Hi, my name is Fer</h1>
-        <p className='welcome-section__text-web-dev' >a passionate web developer.</p>
+        <h1 className={classnames('welcome-section__text-hi', darkModeClass)} >Hi, my name is Fer</h1>
+        <p className={classnames('welcome-section__text-web-dev', darkModeClass)} >a passionate web developer.</p>
       </div>
     );
   }
@@ -182,7 +183,7 @@ function WelcomeSection() {
       <>
         { staticStars }
         { renderShotingStars() }
-        { renderMainStar(isDarkMode()) }
+        { renderMainStar(true) }
         { renderStaticStar(0, 'shining', shiningAnimationStyle) }
       </>
     );
@@ -192,7 +193,7 @@ function WelcomeSection() {
     return (
       <>
         { renderClouds() }
-        { renderMainStar(isDarkMode()) }
+        { renderMainStar(false) }
       </>
     );
   }

@@ -29,11 +29,22 @@
 
     .welcome-section__text-hi {
       font-size: 4em;
+      &.light {
+        color: var(--main-red);
+      }
+      &.dark {
+        color: #5DC2B1;
+      }
     }
     
     .welcome-section__text-web-dev {
       font-size: 1.4em;
-      color: #800080; /*var(--main-red); */ /* var(--main-blue); */
+      &.light {
+        color: #800080;
+      }
+      &.dark {
+        color: #000080;
+      }
     }
   }  
 
