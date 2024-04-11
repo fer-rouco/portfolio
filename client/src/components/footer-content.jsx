@@ -1,6 +1,6 @@
 import "./footer-content.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 function ProfileLink({ id, href, children, ariaLabel }) {
@@ -13,7 +13,7 @@ function ProfileLink({ id, href, children, ariaLabel }) {
 
 function ProfileLinkIcon({ id, href, icon, ariaLabel }) {
   return (
-    <ProfileLink>
+    <ProfileLink id={id} href={href} ariaLabel={ariaLabel} >
       <FontAwesomeIcon icon={icon} beatFade={true} className="profile-link__icon" tabIndex="0" ></FontAwesomeIcon>
     </ProfileLink>
   );
@@ -25,6 +25,7 @@ function FooterContet() {
       <div className="social-links" >
         <ProfileLinkIcon id='LinkedIn' icon={faLinkedin} href="https://www.linkedin.com/in/fer-rouco"></ProfileLinkIcon>
         <ProfileLinkIcon id='GitHub'   icon={faGithub}   href="https://github.com/fer-rouco"></ProfileLinkIcon>
+        <ProfileLinkIcon id='WhatsApp' icon={faWhatsapp} href="https://wa.me/5491161132585"></ProfileLinkIcon>
         <ProfileLinkIcon id='Mail'     icon={faEnvelope} href="mailto:rouco.fernando@gmail.com"></ProfileLinkIcon>
         <ProfileLink id='LinkedIn'                       href="https://www.codewars.com/users/fer.rouco">
           <img alt="Light Badge (micro)" className="codewars-badge" src="https://www.codewars.com/users/fer.rouco/badges/micro"></img>
