@@ -1,13 +1,17 @@
 import Panel from "../containers/panel";
 import Button from "../controls/buttons/button";
-import "./card.scss";
+import { useTheme } from '../../contexts/theme-context';
 import Tag from "./tag";
+import "./card.scss";
 
 function Card({ title, description, srcImg, altImg, hrefCode, hrefLive, tags }) {
+  const { theme } = useTheme();
+
+
   return (
     <Panel className='card' >
       <figure>
-        <figcaption className='card__title' >{title}</figcaption>
+        <figcaption className={`card__title ${theme}`} >{title}</figcaption>
         <div className='card__image-container'>
           <img className='card__image' src={srcImg} alt={altImg} />
         </div>
@@ -17,7 +21,7 @@ function Card({ title, description, srcImg, altImg, hrefCode, hrefLive, tags }) 
           <Tag key={tag.text} tech={tag}></Tag>
         ))}
       </div>
-      <p className="card__description" >{description}</p>
+      <p className={`card__description ${theme}`} >{description}</p>
       <div className='card__buttons' >
         <a href={hrefCode} className='card__button-code' target='_blank' >
           <Button>&lt;/&gt;</Button>

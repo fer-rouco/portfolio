@@ -4,9 +4,11 @@ import Form from "../containers/form";
 import TextField from "../controls/fields/input/text-field";
 import MailField from "../controls/fields/input/mail-field";
 import TextAreaField from "../controls/fields/input/textarea-field";
+import { useTheme } from '../../contexts/theme-context';
 import "./contact-section.scss";
 
 function ContactSection() {
+  const { theme } = useTheme();
   const modelState = useState({ name: '', email: '', message: '' });
   const [model] = modelState;
   
@@ -32,7 +34,7 @@ function ContactSection() {
   }
 
   return (
-    <section id='contact-section' className='contact-section' >
+    <section id='contact-section' className={`contact-section ${theme}`} >
       <h2 className='contact-section__header' >Contact me</h2>
       <div className='contact-section__form' >
         <Panel className='contact-form' >

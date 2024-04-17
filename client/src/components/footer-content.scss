@@ -1,49 +1,73 @@
-.social-links {
-  font-size: 2.5em;
-  margin: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  gap: 1rem;
+.footer {
+  min-height: 5em;
+  height: 5em;
+  position: relative;
+
+  a {
+    text-decoration: none;
+  }
   
-  .profile-link {
+  &.light {
+    border: 3px solid #444444;
+    background-color: var(--main-white);
+  }
+  &.dark {
+    border: 3px solid var(--main-white);
+    background-color: #444444;
+  }
+
+  .social-links {
+    font-size: 2.5em;
+    margin: 1rem;
     display: flex;
-    align-items: center;
-    &__icon {
-      height: 2em;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+    
+    .profile-link {
+      display: flex;
+      align-items: center;
+      &__icon {
+        height: 2em;
+      }
+    }
+  
+    .fa-linkedin {
+      color: #0273b1;
+    }
+  
+    .fa-github {
+      color: #000000;
+    }
+    
+    .fa-whatsapp {
+      color: #00E676;
+    }
+  
+    .fa-envelope {
+      color: var(--main-red);
+    }
+  
+    .codewars-badge {
+      animation: fadeinout 1s linear infinite, transform-scale-xy 1s ease-in-out infinite;
+      -webkit-transition: width 1s ease-in-out;
+      -moz-transition: width 1s ease-in-out;
+      -o-transition: width 1s ease-in-out;
+      transition: width 1s ease-in-out;
+    }
+  
+  }
+  
+  .copyrights {
+    position: absolute;
+    font-size: 1.2em;
+    right: 1em;
+    top: .5em;
+    &.light {
+      color: var(--main-gray);
+    }
+    &.dark {
+      color: var(--main-white);
     }
   }
-
-  .fa-linkedin {
-    color: #0273b1;
-  }
-
-  .fa-github {
-    color: #000000;
-  }
-  
-  .fa-whatsapp {
-    color: #00E676;
-  }
-
-  .fa-envelope {
-    color: var(--main-red);
-  }
-
-  .codewars-badge {
-    animation: fadeinout 1s linear infinite, transform-scale-xy 1s ease-in-out infinite;
-    -webkit-transition: width 1s ease-in-out;
-    -moz-transition: width 1s ease-in-out;
-    -o-transition: width 1s ease-in-out;
-    transition: width 1s ease-in-out;
-  }
-
-}
-
-.copyrights {
-  position: absolute;
-  font-size: 1.2em;
-  right: 1em;
-  top: .5em;
-  color: var(--main-gray);
 }

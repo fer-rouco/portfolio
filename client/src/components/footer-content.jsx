@@ -2,6 +2,7 @@ import "./footer-content.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { useTheme } from '../contexts/theme-context';
 
 function ProfileLink({ id, href, children, ariaLabel }) {
   return (
@@ -20,8 +21,9 @@ function ProfileLinkIcon({ id, href, icon, ariaLabel }) {
 }
 
 function FooterContet() {
+  const { theme } = useTheme();
   return (
-    <>
+    <div className={`footer ${theme}`}>
       <div className="social-links" >
         <ProfileLinkIcon id='LinkedIn' icon={faLinkedin} href="https://www.linkedin.com/in/fer-rouco"></ProfileLinkIcon>
         <ProfileLinkIcon id='GitHub'   icon={faGithub}   href="https://github.com/fer-rouco"></ProfileLinkIcon>
@@ -31,10 +33,10 @@ function FooterContet() {
           <img alt="Light Badge (micro)" className="codewars-badge" src="https://www.codewars.com/users/fer.rouco/badges/micro"></img>
         </ProfileLink>
       </div>
-      <div className='copyrights' >
+      <div className={`copyrights ${theme}`} >
         <span>&#169; Fernando Nicolás Rouco</span>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,7 +1,15 @@
 /* Projects section */
 
 .projects-section {
-  background: linear-gradient(0deg, var(--main-blue) 0%, var(--main-green) 100%);
+
+  &.dark {
+    background: #333333;
+  }
+
+  &.light {
+    background: #7AA9BD;
+  }
+  
   color: var(--main-white);
   min-height: 50vh;
 

@@ -1,7 +1,15 @@
 /* Contact section */
 
 .contact-section {
-  background: linear-gradient(180deg, var(--main-blue) 0%, var(--main-green) 100%);
+
+  &.dark {
+    background: #333333;
+  }
+
+  &.light {
+    background: #7AA9BD;
+  }
+
   color: var(--main-white);
   min-height: 80vh;
   padding-bottom: 3em;

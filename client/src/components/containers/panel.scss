@@ -2,7 +2,12 @@
   width: fit-content;
   height: fit-content;
 
-  background-color: var(--main-white);
+  &.light {
+    background-color: var(--main-white);
+  }
+  &.dark {
+    background-color: #666666;
+  }
   border-radius: 1.5em;
   padding: 0.625em;
 }

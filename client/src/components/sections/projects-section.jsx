@@ -1,8 +1,9 @@
 import Card from "../general/card";
 import { TECH } from "../general/tag";
-import "./projects-section.scss";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useTheme } from '../../contexts/theme-context';
+import "./projects-section.scss";
 
 const PROJECTS = [
   {
@@ -68,6 +69,7 @@ const PROJECTS = [
 ];
 
 function ProjectsSection() {
+  const { theme } = useTheme();
   
   const responsive = {
     XXLDesktop: {
@@ -96,7 +98,7 @@ function ProjectsSection() {
     }
   };
   return (
-    <section id='projects-section' className='projects-section' >
+    <section id='projects-section' className={`projects-section ${theme}`} >
       <h2 className='projects-section__header' >Some things I've worked on</h2>
       <div className='projects-section__cards' >
         <Carousel
