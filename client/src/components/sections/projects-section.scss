@@ -4,13 +4,14 @@
 
   &.dark {
     background: #333333;
+    color: #5DC2B1;
   }
 
   &.light {
     background: #7AA9BD;
+    color: var(--main-white);
   }
   
-  color: var(--main-white);
   min-height: 50vh;
 
   &__header {
