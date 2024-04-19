@@ -7,6 +7,16 @@ import "./projects-section.scss";
 
 const PROJECTS = [
   {
+    key: 'portfolio',
+    title:'Portfolio',
+    description:'Personal portfolio with presentation, projects and contact me section.',
+    srcImg:'https://raw.githubusercontent.com/fer-rouco/minesweeper/main/assets/Portfolio.png',
+    altImg:'Portfolio',
+    hrefCode:'https://github.com/fer-rouco/portfolio/',
+    hrefLive:'https://fer-rouco.github.io/portfolio/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.Sass]
+  },
+  {
     key: 'minesweeper',
     title:'Minesweeper',
     description:'Puzzle game with the aim of clear an abstract minefield without detonating a mine.',
