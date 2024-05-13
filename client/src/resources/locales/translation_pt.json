@@ -1,0 +1,25 @@
+{
+  "languages": {
+    "en": "Inglês",
+    "es": "Espanhol",
+    "pt": "Português",
+    "ge": "Alemão"
+  },
+  "components": {
+    "bars": {
+      "navBar": {
+        "about": "Sobre",
+        "work": "Trabalho",
+        "contact": "Contato"
+      }
+    },
+    "sections": {
+      "welcome": {
+        "hi-first-line": "Oi, meu nome é Fer",
+        "hi-second-line": "um desenvolvedor web apaixonado."
+      },
+      "projects": {},
+      "contact": {}
+    }    
+  }
+}

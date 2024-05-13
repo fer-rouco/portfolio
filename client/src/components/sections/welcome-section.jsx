@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTheme } from '../../contexts/theme-context';
+import { useTranslation } from "react-i18next";
 import { ReactComponent as Waves } from '../../assets/waves.svg';
 import classnames from 'classnames';
 import "./welcome-section.scss";
@@ -12,6 +13,7 @@ function getRandomInt(min, max) {
 
 function WelcomeSection() {
   const { theme, isDarkMode } = useTheme();
+  const { t } = useTranslation('components', { keyPrefix: 'sections.welcome' });
 
   // Light Mode States
   const [cloudsCount, setCloudsCount] = useState(0);
@@ -132,8 +134,8 @@ function WelcomeSection() {
     const darkModeClass = isDarkMode() ? 'dark' : 'light';
     return (
       <div className='welcome-section__text-container'>
-        <h1 className={classnames('welcome-section__text-hi', darkModeClass)} >Hi, my name is Fer</h1>
-        <p className={classnames('welcome-section__text-web-dev', darkModeClass)} >a passionate web developer.</p>
+        <h1 className={classnames('welcome-section__text-hi', darkModeClass)} >{t('hi-first-line')}</h1>
+        <p className={classnames('welcome-section__text-web-dev', darkModeClass)} >{t('hi-second-line')}</p>
       </div>
     );
   }

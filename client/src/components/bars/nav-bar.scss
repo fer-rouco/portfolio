@@ -1,5 +1,4 @@
-
-.nav {
+.nav--background {
   /* background-color: #356598; */ /*#be3144;*/
   &.light {
     background: linear-gradient(0deg, rgb(118, 201, 255), var(--main-blue));
@@ -7,7 +6,20 @@
   &.dark {
     background: linear-gradient(0deg, var(--main-gray), var(--main-blue));    
   }
-  
+}
+
+.nav--background-focus {
+  &.light {
+    background-color: var(--main-blue);
+  }
+  &.dark {
+    background-color: var(--main-blue);
+  }
+}
+
+.nav {
+  @extend .nav--background;
+
   color: #F1F1F1;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   padding-right: .2em;
@@ -53,12 +65,7 @@
     padding: .5rem 1rem;
 
     &:hover, &:focus {
-      &.light {
-        background-color: var(--main-blue);
-      }
-      &.dark {
-        background-color: var(--main-blue);
-      }
+      @extend .nav--background-focus;
       cursor: pointer;
       outline: none;
       border-radius: 1rem;
@@ -68,5 +75,60 @@
     &:active {
       box-shadow: none;
     }   
+  }
+
+  .menu-icon {
+    width: .9rem;
+    height: 2.625em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 1rem;
+    border-radius: 5px;
+
+    &:hover + .context-menu,
+    &:focus + .context-menu {
+      display: block;
+    }
+    
+    .menu-icon-item {
+      width: 100%;
+      height: 0.25em;
+      background-color: var(--main-blue);
+      border-radius: 2px;
+    }
+  }
+  
+  /* Estilos para el menú contextual */
+  .context-menu {
+    @extend .nav--background;
+
+    display: none;
+    position: absolute;
+    top: 3.2em;
+    right: .3rem;
+    
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: .3rem;
+
+    &:hover {
+      display: block;
+    }
+    
+    .nav__item {
+      margin: .5rem;
+
+      .nav__button {
+        @extend .nav__link;
+        font-size: 1em;
+        border: .1px black;
+        background-color: transparent;
+        width: 100%;
+      }
+    }
   }
 }
