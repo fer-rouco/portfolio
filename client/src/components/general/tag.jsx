@@ -14,7 +14,7 @@ export const TECH = Object.freeze({
 
 function Tag({ backgroundColor, color, text, tooltip, href, className, tech }) {
   return (
-    <a className='tag-link' href={href || tech?.href} target='_blank' >
+    <a className='tag-link' href={href || tech?.href} target='_blank' rel='noreferrer' >
       <span
         className={`tag-link__span ${className || ''}`}
         style={{backgroundColor: `${backgroundColor || tech?.backgroundColor}`, color: `${color || tech?.color}`}}

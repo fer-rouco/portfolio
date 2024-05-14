@@ -1,6 +1,7 @@
 import { useModel } from "../../../../contexts/model-context";
 import InputField from "./input-field";
 import modelHelper from "./model-helper";
+import { useTranslation } from "react-i18next";
 
 function MailField({
   attr,
@@ -12,6 +13,7 @@ function MailField({
   validate
 }) {
   const { getValue } = modelHelper({ modelState: useModel(), attr, value, onChange });
+  const tValidations = useTranslation('components', { keyPrefix: 'controls.fields.validations' }).t;
   
   return (
     <InputField 
@@ -19,7 +21,7 @@ function MailField({
       attr={attr}
       value={value}
       label={label}
-      errorLabel={errorLabel || 'Please enter a valid email address.'}
+      errorLabel={errorLabel || tValidations('valid-email')}
       onChange={onChange}
       required={required}
       validate={validate}

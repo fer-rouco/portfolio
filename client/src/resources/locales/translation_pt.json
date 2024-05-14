@@ -11,6 +11,22 @@
         "about": "Sobre",
         "work": "Trabalho",
         "contact": "Contato"
+      },
+      "controls": {
+        "fields": {
+          "validations": {
+            "empty-field": "Por favor, insira seu {{field}}",
+            "valid-email": "Por favor, insira um endereço de email válido."
+          }
+        },
+        "buttons": {
+          "submit": "Enviar"
+        }
+      },
+      "general": {
+        "card": {
+          "live-view": "Visualização ao Vivo"
+        }
       }
     },
     "sections": {
@@ -18,8 +34,64 @@
         "hi-first-line": "Oi, meu nome é Fer",
         "hi-second-line": "um desenvolvedor web apaixonado."
       },
-      "projects": {},
-      "contact": {}
+      "projects": {
+        "title": "Algumas coisas em que trabalhei",
+        "cards": {
+          "portfolio": {
+            "title": "Portfólio",
+            "description": "Portfólio pessoal com apresentação, projetos e seção de contato.",
+            "altImg": "Portfólio"
+          },
+          "minesweeper": {
+            "title": "Campo Minado",
+            "description": "Jogo de quebra-cabeça com o objetivo de limpar um campo minado abstrato sem detonar uma mina.",
+            "altImg": "Imagem do Campo Minado"
+          },
+          "markdown-previewer": {
+            "title": "Visualizador de Markdown",
+            "description": "Edite e visualize seus markdowns com este aplicativo.",
+            "altImg": "Imagem do Visualizador de Markdown"
+          },
+          "drum-machine": {
+            "title": "Máquina de Tambores",
+            "description": "Você é músico? Toque tambor com seu teclado usando este aplicativo.",
+            "altImg": "Imagem da Máquina de Tambores"
+          },
+          "javascript-calculator": {
+            "title": "Calculadora Javascript",
+            "description": "Aplicativo que permite fazer seus cálculos aritméticos.",
+            "altImg": "Imagem da Calculadora Javascript"
+          },
+          "pomodoro-clock": {
+            "title": "Relógio Pomodoro 25 + 5",
+            "description": "Aplicativo para aplicar a Técnica Pomodoro às suas tarefas diárias.",
+            "altImg": "Imagem do Relógio Pomodoro (25+5)"
+          },
+          "random-quote-machine": {
+            "title": "Máquina de Citações Aleatórias",
+            "description": "Aplicativo que mostra aleatoriamente citações de diferentes autores.",
+            "altImg": "Imagem da Máquina de Citações Aleatórias"
+          }
+        }
+        
+      },
+      "contact": {
+        "title": "Contate-me",
+        "form": {
+          "fields": {
+            "name": "Nome",
+            "email": "Email",
+            "message": "Mensagem"
+          },
+          "validations": {
+            "empty-name": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"nome\" })",
+            "empty-email": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"e-mail\" })",
+            "empty-message": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"mensagem\" })",
+            "valid-email": "$t(componnts.controls.fields.validations.valid-email)"
+          },
+          "submit-button": "Enviar"
+        }
+      }      
     }    
   }
 }

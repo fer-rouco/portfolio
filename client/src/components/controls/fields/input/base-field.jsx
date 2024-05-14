@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useForm } from "../../../containers/form-context";
 import { useModel } from "../../../../contexts/model-context";
+import { useTranslation } from "react-i18next";
 import "./base-field.scss";
 
 function BaseField({
@@ -16,9 +17,10 @@ function BaseField({
 }) {
   const { setFormValid, executeValidation } = useForm();
   const { initializeField, setValid, isValid } = useModel();
+  const tValidations = useTranslation('components', { keyPrefix: 'controls.fields.validations' }).t;
 
   useEffect(() => {
-    initializeField && initializeField(attr);
+    initializeField(attr);
   });
 
   useEffect(() => {
@@ -26,10 +28,6 @@ function BaseField({
       return;
     }
 
-    doValidate();
-  }, [executeValidation, validate]);
-
-  const doValidate = () => {
     let valid = false;
     if (validationFn) {
       valid = validationFn();
@@ -42,7 +40,7 @@ function BaseField({
     if (setFormValid) {
       setFormValid(valid)
     }
-  }
+  }, [executeValidation, validate, validationFn, attr, required, setFormValid, setValid, value]);
 
   const hideRequiredAsterisk = () => {
     return (
@@ -53,7 +51,7 @@ function BaseField({
   }
   
   const isValueValid = (attr) => {
-    return isValid && isValid(attr);
+    return isValid ? isValid(attr) : false;
   }
 
   return (
@@ -61,7 +59,7 @@ function BaseField({
       <div className='label-container' >
         <label htmlFor={`input-${attr}`} >{label} :</label>
         <span className={`label-container__required ${ hideRequiredAsterisk() ? 'hide' : '' }`} >*</span>
-        <span className={`label-container__error-label ${(isValueValid(attr)) ? 'hide' : '' }`} >{errorLabel || `Please enter your ${label.toLowerCase()}.`}</span>
+        <span className={`label-container__error-label ${(isValueValid(attr)) ? 'hide' : '' }`} >{errorLabel || tValidations('empty-field', { field: label.toLowerCase() } )}</span>
       </div>
       {children}
     </div>

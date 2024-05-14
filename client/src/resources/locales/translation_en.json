@@ -13,13 +13,84 @@
         "contact": "Contact"
       }
     },
+    "controls": {
+      "fields": {
+        "validations": {
+          "empty-field": "Please enter your {{field}}",
+          "valid-email": "Please enter a valid email address."
+        }
+      },
+      "buttons": {
+        "submit": "Submit"
+      }
+    },
+    "general": {
+      "card": {
+        "live-view": "Live View"
+      }
+    },
     "sections": {
       "welcome": {
         "hi-first-line": "Hi, my name is Fer",
         "hi-second-line": "a passionate web developer."
       },
-      "projects": {},
-      "contact": {}
+      "projects": {
+        "title": "Some things I've worked on",
+        "cards": {
+          "portfolio": {
+            "title": "Portfolio",
+            "description": "Personal portfolio with presentation, projects and contact me section.",
+            "altImg": "Portfolio"
+          },
+          "minesweeper": {
+            "title": "Minesweeper",
+            "description": "Puzzle game with the aim of clear an abstract minefield without detonating a mine.",
+            "altImg": "Minesweeper Image"
+          },
+          "markdown-previewer": {
+            "title": "Markdown Previewer",
+            "description": "Edit and previsualize your markdowns with this app.",
+            "altImg": "Markdow Previewer Image"
+          },
+          "drum-machine": {
+            "title": "Drum Machine",
+            "description": "Are you a musician? Play the drum with your keyboard using this App.",
+            "altImg": "Drum Machine Image"
+          },
+          "javascript-calculator": {
+            "title": "Javascript Calculator",
+            "description": "App that allows you to do your arithmetic calculations.",
+            "altImg": "Javascript Calculator Image"
+          },
+          "pomodoro-clock": {
+            "title": "Pomodoro 25 + 5 Clock",
+            "description": "App to apply the Pomodoro Technique to your daily tasks.",
+            "altImg": "Pomodoro (25+5) Clock Image"
+          },
+          "random-quote-machine": {
+            "title": "Random Quote Machine",
+            "description": "App which randomly shows quotes from different authors.",
+            "altImg": "Random quote machine Image"
+          }        
+        }
+      },
+      "contact": {
+        "title": "Contact me",
+        "form": {
+          "fields": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Message"
+          },
+          "validations": {
+            "empty-name": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"name\" })",
+            "empty-email": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"e-mail\" })",
+            "empty-message": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"message\" })",
+            "valid-email": "$t(componnts.controls.fields.validations.valid-email)"
+          },
+          "submit-button": "Submit"
+        }
+      }
     }
   }
 }

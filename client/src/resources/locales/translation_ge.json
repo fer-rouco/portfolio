@@ -11,6 +11,22 @@
         "about": "Über",
         "work": "Arbeit",
         "contact": "Kontakt"
+      },
+      "controls": {
+        "fields": {
+          "validations": {
+            "empty-field": "Bitte geben Sie Ihr {{field}} ein",
+            "valid-email": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+          }
+        },
+        "buttons": {
+          "submit": "Absenden"
+        }
+      },
+      "general": {
+        "card": {
+          "live-view": "Live-Ansicht"
+        }
       }
     },
     "sections": {
@@ -18,8 +34,64 @@
         "hi-first-line": "Hallo, mein Name ist Fer",
         "hi-second-line": "ein leidenschaftlicher Webentwickler."
       },
-      "projects": {},
-      "contact": {}
+      "projects": {
+        "title": "Einige Dinge, an denen ich gearbeitet habe",
+        "cards": {
+          "portfolio": {
+            "title": "Portfolio",
+            "description": "Persönliches Portfolio mit Präsentation, Projekten und Kontaktbereich.",
+            "altImg": "Portfolio"
+          },
+          "minesweeper": {
+            "title": "Minesweeper",
+            "description": "Puzzlespiel mit dem Ziel, ein abstraktes Minenfeld zu räumen, ohne eine Mine zu detonieren.",
+            "altImg": "Minesweeper Bild"
+          },
+          "markdown-previewer": {
+            "title": "Markdown Vorschau",
+            "description": "Bearbeiten und visualisieren Sie Ihre Markdowns mit dieser App.",
+            "altImg": "Markdown Vorschau Bild"
+          },
+          "drum-machine": {
+            "title": "Schlagzeugautomat",
+            "description": "Sind Sie Musiker? Spielen Sie Schlagzeug mit Ihrer Tastatur mit dieser App.",
+            "altImg": "Schlagzeugautomat Bild"
+          },
+          "javascript-calculator": {
+            "title": "Javascript Rechner",
+            "description": "App, die Ihnen ermöglicht, Ihre arithmetischen Berechnungen durchzuführen.",
+            "altImg": "Javascript Rechner Bild"
+          },
+          "pomodoro-clock": {
+            "title": "Pomodoro 25 + 5 Uhr",
+            "description": "App zur Anwendung der Pomodoro-Technik auf Ihre täglichen Aufgaben.",
+            "altImg": "Pomodoro (25+5) Uhr Bild"
+          },
+          "random-quote-machine": {
+            "title": "Zufalls Zitate Maschine",
+            "description": "App, die zufällig Zitate von verschiedenen Autoren anzeigt.",
+            "altImg": "Zufalls Zitate Maschine Bild"
+          }
+        }
+        
+      },
+      "contact": {
+        "title": "Kontaktiere mich",
+        "form": {
+          "fields": {
+            "name": "Name",
+            "email": "Email",
+            "message": "Nachricht"
+          },
+          "validations": {
+            "empty-name": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"Name\" })",
+            "empty-email": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"E-Mail\" })",
+            "empty-message": "$t(componnts.controls.fields.validations.empty-field, {\"field\": \"Nachricht\" })",
+            "valid-email": "$t(componnts.controls.fields.validations.valid-email)"
+          },
+          "submit-button": "Absenden"
+        }
+      }      
     }
   }
 }

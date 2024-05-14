@@ -6,7 +6,7 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   &:hover {
     -webkit-transform: scale(1.04);
@@ -55,21 +55,26 @@
   }
   
   &__description {
+    max-height: 4.5em;
+    
     text-align: center;
     font-size: 1.2em;
     font-weight: bold;
+    
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
     &.light {
       color: var(--main-green);
     }
     &.dark {
       color: #000080;
     }
-  
-    height: 94px;
   }
   
   &__buttons {
-    /* position: absolute; */
     bottom: 1.25em;
     display: flex;
     justify-content: space-around;

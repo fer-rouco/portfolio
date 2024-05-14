@@ -6,7 +6,7 @@ import { useTheme } from '../contexts/theme-context';
 
 function ProfileLink({ id, href, children, ariaLabel }) {
   return (
-    <a id={id} target='_blank' href={href} name="profile-link" className="profile-link" aria-label={`${ariaLabel} || ${id} Link`} >
+    <a id={id} target='_blank' rel='noreferrer' href={href} name="profile-link" className="profile-link" aria-label={`${ariaLabel} || ${id} Link`} >
       {children}
     </a>
   );
