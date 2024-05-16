@@ -11,22 +11,22 @@
         "about": "Über",
         "work": "Arbeit",
         "contact": "Kontakt"
-      },
-      "controls": {
-        "fields": {
-          "validations": {
-            "empty-field": "Bitte geben Sie Ihr {{field}} ein",
-            "valid-email": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
-          }
-        },
-        "buttons": {
-          "submit": "Absenden"
+      }
+    },
+    "controls": {
+      "fields": {
+        "validations": {
+          "empty-field": "Bitte geben Sie Ihr {{field}} ein",
+          "valid-email": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
         }
       },
-      "general": {
-        "card": {
-          "live-view": "Live-Ansicht"
-        }
+      "buttons": {
+        "submit": "Absenden"
+      }
+    },
+    "general": {
+      "card": {
+        "live-view": "Live-Ansicht"
       }
     },
     "sections": {

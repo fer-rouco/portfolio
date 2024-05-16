@@ -2,9 +2,12 @@ import "./nav-bar.scss";
 import { useTheme } from '../../contexts/theme-context';
 import { ReactComponent as Moon } from '../../assets/icons/moon.svg';
 import { ReactComponent as Sun } from '../../assets/icons/sun.svg';
+import { STORAGE_LANGUAGE } from "./../../services/storage/storage-constants";
+import storageManagerService from "./../../services/storage/storage-manager-service";
 import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 
+const localStorageService = storageManagerService();
 
 function NavItem(content) {
   return (
@@ -45,7 +48,7 @@ function NavItemButton({text, fn, theme}) {
 function handleLanguageChange(language) {
   i18n.changeLanguage(language, (error, t) => {
     if (!error) {
-      console.error("Error trying to change language");
+      localStorageService.setItem(STORAGE_LANGUAGE, language);
     }
     else {
       return console.error('Something went wrong trying to change the language.', error);
