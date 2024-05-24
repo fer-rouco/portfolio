@@ -47,6 +47,26 @@
             "description": "Puzzlespiel mit dem Ziel, ein abstraktes Minenfeld zu räumen, ohne eine Mine zu detonieren.",
             "altImg": "Minesweeper Bild"
           },
+          "marvel-characters": {
+            "title": "Marvel-Charaktere",
+            "description": "Seite, die die Marvel-Charaktere aus der API https://developer.marvel.com/ zeigt",
+            "altImg": "Bild der Marvel-Charaktere"
+          },
+          "bank-products": {
+            "title": "Bankprodukte",
+            "description": "App, die es ermöglicht, die Produkte einer Bank aus einer API aufzulisten, hinzuzufügen, zu bearbeiten und zu löschen",
+            "altImg": "Bild der Bankproduktliste"
+          },
+          "ncr-challenge": {
+            "title": "NCR-Herausforderung",
+            "description": "NCR-Herausforderung",
+            "altImg": "Bild der NCR-Herausforderung"
+          },
+          "eldar-challenge": {
+            "title": "Produktliste",
+            "description": "App, die es ermöglicht, die Produkte einer Bank aus einer API aufzulisten, hinzuzufügen, zu bearbeiten und zu löschen",
+            "altImg": "Bild der Bankproduktliste"
+          },
           "markdown-previewer": {
             "title": "Markdown Vorschau",
             "description": "Bearbeiten und visualisieren Sie Ihre Markdowns mit dieser App.",

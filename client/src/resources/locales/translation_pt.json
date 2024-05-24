@@ -47,6 +47,26 @@
             "description": "Jogo de quebra-cabeça com o objetivo de limpar um campo minado abstrato sem detonar uma mina.",
             "altImg": "Imagem do Campo Minado"
           },
+          "marvel-characters": {
+            "title": "Personagens da Marvel",
+            "description": "Página que mostra os personagens da Marvel extraídos da API https://developer.marvel.com/",
+            "altImg": "Imagem dos personagens da Marvel"
+          },
+          "bank-products": {
+            "title": "Produtos Bancários",
+            "description": "Aplicativo que permite listar, adicionar, editar e excluir produtos de um banco a partir de uma API",
+            "altImg": "Imagem da lista de produtos bancários"
+          },
+          "ncr-challenge": {
+            "title": "Desafio NCR",
+            "description": "Desafio NCR",
+            "altImg": "Imagem do Desafio NCR"
+          },
+          "eldar-challenge": {
+            "title": "Lista de Produtos",
+            "description": "Aplicativo que permite listar, adicionar, editar e excluir produtos de um banco a partir de uma API",
+            "altImg": "Imagem da lista de produtos bancários"
+          },
           "markdown-previewer": {
             "title": "Visualizador de Markdown",
             "description": "Edite e visualize seus markdowns com este aplicativo.",

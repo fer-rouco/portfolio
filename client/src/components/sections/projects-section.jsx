@@ -22,6 +22,34 @@ const PROJECTS = [
     tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
   },
   {
+    key: 'marvel-characters',
+    srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/marvel-characters.png',
+    hrefCode: 'https://github.com/fer-rouco/marvel-characters/',
+    // hrefLive: 'https://fer-rouco.github.io/marvel-characters/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
+  },
+  {
+    key: 'bank-products',
+    srcImg: 'https://raw.githubusercontent.com/fer-rouco/bank-products/main/assets/product-list.png',
+    hrefCode: 'https://github.com/fer-rouco/bank-products/',
+    // hrefLive: 'https://fer-rouco.github.io/bank-products/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
+  },
+  {
+    key: 'ncr-challenge',
+    srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/ncr-challenge.png',
+    hrefCode: 'https://github.com/fer-rouco/ncr-challenge/',
+    // hrefLive: 'https://fer-rouco.github.io/ncr-challenge/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.AmCharts, TECH.PopperJs]
+  },
+  {
+    key: 'eldar-challenge',
+    srcImg: 'https://raw.githubusercontent.com/fer-rouco/eldar-challenge/main/assets/eldar-challenge.png',
+    hrefCode: 'https://github.com/fer-rouco/eldar-challenge-client/',
+    hrefLive: 'https://fer-rouco.github.io/eldar-challenge-client/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.Node, TECH.Express, TECH.Mongoose]
+  },
+  {
     key: 'markdown-previewer',
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/markdown-previewer/main/src/assets/screenshot.png',
     hrefCode: 'https://github.com/fer-rouco/markdown-previewer/',
@@ -68,7 +96,7 @@ function ProjectsSection() {
   });
 
   const responsive = {
-    XXLDesktop: {
+    XXXLDesktop: {
       breakpoint: { max: 2688, min: 2304 },
       items: 6
     },

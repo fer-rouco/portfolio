@@ -11,8 +11,7 @@ import "./contact-section.scss";
 function ContactSection() {
   const { theme } = useTheme();
   const { t } = useTranslation('components', { keyPrefix: 'sections.contact' });
-  const modelState = useState({ name: '', email: '', message: '' });
-  const [model] = modelState;
+  const [model, setModel] = useState({ name: '', email: '', message: '' });
   
   const onSubmit = (model) => {
     const { name, email, message } = model;
@@ -40,7 +39,7 @@ function ContactSection() {
       <h2 className='contact-section__header' >{t('title')}</h2>
       <div className='contact-section__form' >
         <Panel className='contact-form' >
-          <Form onSubmit={onSubmit} modelState={modelState} >
+          <Form onSubmit={onSubmit} modelState={[model, setModel]} >
             <fieldset className='contact-form__fieldset' >
               <TextField attr='name' label={t('form.fields.name')} required ></TextField>
               <MailField attr='email' label={t('form.fields.email')} required ></MailField>

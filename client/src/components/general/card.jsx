@@ -28,7 +28,7 @@ function Card({ title, description, srcImg, altImg, hrefCode, hrefLive, tags }) 
           <Button>&lt;/&gt;</Button>
         </a>
         <a href={hrefLive} className='card__button-live' target='_blank' rel='noreferrer' >
-          <Button>{t('live-view')}</Button>
+          <Button disabled={!hrefLive} >{t('live-view')}</Button>
         </a>
       </div>
     </Panel>

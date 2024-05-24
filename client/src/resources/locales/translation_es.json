@@ -47,6 +47,26 @@
             "description": "Juego de rompecabezas con el objetivo de limpiar un campo minado abstracto sin detonar una mina.",
             "altImg": "Imagen de Buscaminas"
           },
+          "marvel-characters": {
+            "title": "Personajes de Marvel",
+            "description": "Página que muestra los personajes de Marvel extraídos de la API https://developer.marvel.com/",
+            "altImg": "Imagen de personajes de Marvel"
+          },
+          "bank-products": {
+            "title": "Productos Bancarios",
+            "description": "Aplicación que permite listar, agregar, editar y eliminar productos de un banco desde una API",
+            "altImg": "Imagen de la lista de productos bancarios"
+          },
+          "ncr-challenge": {
+            "title": "Desafío NCR",
+            "description": "Desafío NCR",
+            "altImg": "Imagen del desafío NCR"
+          },
+          "eldar-challenge": {
+            "title": "Lista de Productos",
+            "description": "Aplicación que permite listar, agregar, editar y eliminar productos de un banco desde una API",
+            "altImg": "Imagen de la lista de productos bancarios"
+          },
           "markdown-previewer": {
             "title": "Visor de Markdown",
             "description": "Edita y visualiza tus markdowns con esta aplicación.",
