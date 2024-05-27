@@ -32,7 +32,7 @@ const PROJECTS = [
     key: 'bank-products',
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/bank-products/main/assets/product-list.png',
     hrefCode: 'https://github.com/fer-rouco/bank-products/',
-    // hrefLive: 'https://fer-rouco.github.io/bank-products/',
+    hrefLive: 'https://fer-rouco.github.io/bank-products/',
     tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
   },
   {
@@ -44,9 +44,9 @@ const PROJECTS = [
   },
   {
     key: 'eldar-challenge',
-    srcImg: 'https://raw.githubusercontent.com/fer-rouco/eldar-challenge/main/assets/eldar-challenge.png',
-    hrefCode: 'https://github.com/fer-rouco/eldar-challenge-client/',
-    hrefLive: 'https://fer-rouco.github.io/eldar-challenge-client/',
+    srcImg: 'https://raw.githubusercontent.com/fer-rouco/eldar-challenge/main/assets/product-list.png',
+    hrefCode: 'https://github.com/fer-rouco/eldar-challenge/',
+    hrefLive: 'https://fer-rouco.github.io/eldar-challenge/',
     tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.Node, TECH.Express, TECH.Mongoose]
   },
   {
