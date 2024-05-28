@@ -5,12 +5,12 @@
   scroll-margin-top: 3.8em;
 
   &.dark {
-    background: linear-gradient(360deg, #333333, #888888);
+    background: linear-gradient(0deg, #888888, #333333);
     color: #5DC2B1;
   }
 
   &.light {
-    background: linear-gradient(360deg, rgb(118, 201, 255), rgb(247, 255, 222));
+    background: linear-gradient(0deg, rgb(247, 255, 222), rgb(118, 201, 255));
     color: var(--main-red);
   }
 
