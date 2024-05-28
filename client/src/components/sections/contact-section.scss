@@ -1,6 +1,9 @@
 /* Contact section */
 
 .contact-section {
+  min-height: 80vh;
+  scroll-margin-top: 3em;
+  padding-bottom: 3em;
 
   &.dark {
     background: #333333;
@@ -12,9 +15,6 @@
     color: var(--main-white);
   }
 
-  min-height: 80vh;
-  padding-bottom: 3em;
-  
   &__header {
     color: var(--main-red);
     font-size: 3em;

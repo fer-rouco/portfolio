@@ -1,6 +1,8 @@
 /* Projects section */
 
 .projects-section {
+  min-height: 50vh;
+  scroll-margin-top: 3em;
 
   &.dark {
     background: #333333;
@@ -11,8 +13,6 @@
     background: #7AA9BD;
     color: var(--main-white);
   }
-  
-  min-height: 50vh;
 
   &__header {
     color: var(--main-red);
