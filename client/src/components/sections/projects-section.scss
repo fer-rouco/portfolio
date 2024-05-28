@@ -5,17 +5,16 @@
   scroll-margin-top: 3.8em;
 
   &.dark {
-    background: #333333;
+    background: linear-gradient(360deg, #333333, #888888);
     color: #5DC2B1;
   }
 
   &.light {
-    background: #7AA9BD;
-    color: var(--main-white);
+    background: linear-gradient(360deg, rgb(118, 201, 255), rgb(247, 255, 222));
+    color: var(--main-red);
   }
 
   &__header {
-    color: var(--main-red);
     font-size: 3em;
     padding-top: .5em;
     margin: 0 auto 0.5em auto;
