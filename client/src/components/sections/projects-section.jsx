@@ -26,7 +26,8 @@ const PROJECTS = [
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/marvel-characters.png',
     hrefCode: 'https://github.com/fer-rouco/marvel-characters/',
     // hrefLive: 'https://fer-rouco.github.io/marvel-characters/',
-    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
+    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass],
+    hidden: true
   },
   {
     key: 'bank-products',
@@ -40,7 +41,8 @@ const PROJECTS = [
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/ncr-challenge.png',
     hrefCode: 'https://github.com/fer-rouco/ncr-challenge/',
     // hrefLive: 'https://fer-rouco.github.io/ncr-challenge/',
-    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.AmCharts, TECH.PopperJs]
+    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.AmCharts, TECH.PopperJs],
+    hidden: true
   },
   {
     key: 'eldar-challenge',
@@ -134,7 +136,9 @@ function ProjectsSection() {
           itemClass="projects-section__cards-item"
           responsive={responsive}
         >
-          {PROJECTS_WITH_TRANSLATIONS.map(project => (
+          {PROJECTS_WITH_TRANSLATIONS
+          .filter(project => !project.hidden)
+          .map(project => (
             <Card
               key={project.key}
               title={project.title}
