@@ -1,13 +1,23 @@
 import "./nav-bar.scss";
+import PropTypes from 'prop-types';
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from '../../contexts/theme-context';
+import Panel from '../containers/panel';
 import { ReactComponent as Moon } from '../../assets/icons/moon.svg';
 import { ReactComponent as Sun } from '../../assets/icons/sun.svg';
+import { ReactComponent as Download } from '../../assets/icons/download.svg';
+import { ReactComponent as Spanish } from '../../assets/icons/flag-es.svg';
+import { ReactComponent as Portuguese } from '../../assets/icons/flag-pt.svg';
+import { ReactComponent as German } from '../../assets/icons/flag-ge.svg';
+import { ReactComponent as English } from '../../assets/icons/flag-en.svg';
 import { STORAGE_LANGUAGE } from "./../../services/storage/storage-constants";
 import storageManagerService from "./../../services/storage/storage-manager-service";
-import { useTranslation } from "react-i18next";
 import i18n from "i18next";
 
 const localStorageService = storageManagerService();
+
+// ############ Nav Item Components ############
 
 function NavItem(content) {
   return (
@@ -17,33 +27,151 @@ function NavItem(content) {
   );
 }
 
-function Link({text, href, theme}) {
+function Link({children, href, theme}) {
   return (
     <a className={`nav__link ${theme}`} href={href} name='nav-item' tabIndex="0">
-      {text}
+      {children}
     </a>
   );
 }
 
-function Button({text, fn, theme}) {
+Link.propTypes = {
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
+  theme: PropTypes.string,
+};
+
+function Button({children, fn, theme}) {
   return (
     <button className={`nav__button ${theme}`} onClick={fn} name='nav-item' tabIndex="0">
-      {text}
+      {children}
     </button>
   );
 }
 
-function NavItemLink({text, href, theme}) {
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  fn: PropTypes.func.isRequired,
+  theme: PropTypes.string,
+};
+
+function NavItemLink({children, href, theme}) {
   return (
-    NavItem( Link({text, href, theme}) )
+    NavItem( Link({children, href, theme}) )
   );
 }
 
-function NavItemButton({text, fn, theme}) {
+function NavItemButton({children, fn, theme}) {
   return (
-    NavItem( Button({text, fn, theme}) )
+    NavItem( Button({children, fn, theme}) )
   );
 }
+
+// ############ Context Menu Components ############
+
+function downloadResumeLink(text, theme) {
+  return (
+    <NavItemLink href="https://drive.google.com/uc?export=download&id=1dDRQYhjM_Wl6MTbFcuh0B39V0Ix3c4mS" theme={theme} >
+      <Download className="download-icon" ></Download>
+      {text}
+    </NavItemLink>
+  );
+}
+
+function buildFlagMap() {
+  return new Map([
+    ['en', <English key='en' ></English>],
+    ['es', <Spanish key='es' ></Spanish>],
+    ['ge', <German key='ge' ></German>],
+    ['pt', <Portuguese key='pt' ></Portuguese>],
+  ]);
+}
+
+function ContextMenuLanguageContent() {
+  const flagMap = buildFlagMap();
+  const tLanguage = useTranslation('languages').t;
+  const translationLanguages = Object.keys(i18n.services.resourceStore.data);
+  const languages = translationLanguages.map((language) => {
+    return {
+      value: language,
+      label: tLanguage(language),
+      flag: flagMap.get(language)
+    };
+  });
+
+  return (
+    languages.map(language => (
+      <NavItemButton key={language.value} fn={() => {handleLanguageChange(language.value)}} theme >
+        {language.flag}
+        {language.label}
+      </NavItemButton>
+    ))
+  );
+}
+
+function ContextMenuLanguageButton({toggleState}) {
+  const [show, setShow] = toggleState;
+  const { t } = useTranslation('components', { keyPrefix: 'bars.navBar.context-menu' });
+  const flagMap = buildFlagMap();
+  const language = localStorageService.getItem(STORAGE_LANGUAGE);
+  return (
+    <NavItemButton fn={() => { setShow(!show); }}>{flagMap.get(language)}{t('language')}</NavItemButton>
+ );
+}
+
+function ContextMenuLanguage() {
+  const [show, setShow] = useState(false);
+  return (
+    <>
+      <ContextMenuLanguageButton toggleState={[show, setShow]} ></ContextMenuLanguageButton>
+        { show ? 
+          <Panel transparent>
+            <ContextMenuLanguageContent></ContextMenuLanguageContent>
+          </Panel>
+            : 
+          <></> 
+        }
+    </>
+ );
+}
+
+function ContextMenuIcon() {
+  return (
+    <button className="menu-icon">
+      <span className="menu-icon-item" ></span>
+      <span className="menu-icon-item" ></span>
+      <span className="menu-icon-item" ></span>
+    </button>
+  );
+}
+
+function ContextMenuContent({theme}) {
+  const { t } = useTranslation('components', { keyPrefix: 'bars.navBar.context-menu' });
+
+  return (
+    <div className={`context-menu ${theme}`} >
+      { downloadResumeLink(t('resume'), theme) }
+      <ContextMenuLanguage></ContextMenuLanguage>
+    </div >
+  );
+}
+
+ContextMenuContent.propTypes = {
+  theme: PropTypes.string,
+};
+
+function ContextMenu({theme}) {
+  return (
+    <>
+      <ContextMenuIcon></ContextMenuIcon>
+      <ContextMenuContent theme={theme} ></ContextMenuContent>
+    </>
+  );
+}
+
+ContextMenu.propTypes = {
+  theme: PropTypes.string,
+};
 
 function handleLanguageChange(language) {
   i18n.changeLanguage(language, (error, t) => {
@@ -56,33 +184,29 @@ function handleLanguageChange(language) {
   });
 }
 
+// ############ Theme Toggler Component ############
+
+function ThemeToggler() {
+  const { isDarkMode, toggleTheme } = useTheme();
+  return (
+    <li className="theme-icon" ><button className="theme-icon__button" onClick={toggleTheme} >{ (isDarkMode()) ? <Sun></Sun> : <Moon></Moon> }</button></li>
+  );
+}
+
+// ############ Main Component ############
 
 function NavBar() {
-  const { theme, isDarkMode, toggleTheme } = useTheme();
+  const { theme } = useTheme();
   const { t } = useTranslation('components', { keyPrefix: 'bars.navBar' });
-  const tLanguage = useTranslation('languages').t;
-  const languages = Object.keys(i18n.services.resourceStore.data).map((language) => { return { value: language, label: tLanguage(language) }; });
 
   return (
     <nav className={`nav ${theme}`} >
       <ul className='nav__list' >
-        <NavItemLink text={t('about')} href='#welcome-section' theme={theme} ></NavItemLink>
-        <NavItemLink text={t('work')} href='#projects-section' theme={theme} ></NavItemLink>
-        <NavItemLink text={t('contact')} href='#contact-section' theme={theme} ></NavItemLink>
-        <li className="theme-icon" onClick={toggleTheme} >{ (isDarkMode()) ? <Sun></Sun> : <Moon></Moon> } </li>
-        <div className="menu-icon">
-          <span className="menu-icon-item" ></span>
-          <span className="menu-icon-item" ></span>
-          <span className="menu-icon-item" ></span>
-        </div>
-        <div className={`context-menu ${theme}`} >
-          {
-            languages.map(language => (
-              <NavItemButton key={language.value} text={language.label} fn={() => {handleLanguageChange(language.value)}} theme={theme} ></NavItemButton>
-            ))
-          }
-        </div >
-
+        <NavItemLink href='#welcome-section' theme={theme} >{t('about')}</NavItemLink>
+        <NavItemLink href='#projects-section' theme={theme} >{t('work')}</NavItemLink>
+        <NavItemLink href='#contact-section' theme={theme} >{t('contact')}</NavItemLink>
+        <ThemeToggler></ThemeToggler>
+        <ContextMenu theme={theme} ></ContextMenu>
       </ul>
     </nav>
   );

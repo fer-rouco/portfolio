@@ -10,7 +10,11 @@
       "navBar": {
         "about": "Acerca de",
         "work": "Trabajo",
-        "contact": "Contacto"
+        "contact": "Contacto",
+        "context-menu": {
+          "resume": "Curriculum",
+          "language": "Idioma"
+        }
       }
     },
     "controls": {

@@ -34,7 +34,16 @@
     height: 100%;
     gap: .2em;
 
+    .clean-button-styles {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
     & .theme-icon {
+      &__button {
+        @extend .clean-button-styles;
+      }
       display: flex;
       padding: 0 1em 0 1em;
       cursor: pointer;
@@ -64,6 +73,9 @@
     text-decoration: none;
     padding: .5rem 1rem;
 
+    display: flex;
+    align-items: center;
+
     &:hover, &:focus {
       @extend .nav--background-focus;
       cursor: pointer;
@@ -78,6 +90,8 @@
   }
 
   .menu-icon {
+    @extend .clean-button-styles;
+
     width: .9rem;
     height: 2.625em;
     display: flex;
@@ -114,6 +128,18 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding: .3rem;
+
+    svg {
+      height: 1.50em;
+      width: 1.50em;
+      margin-right: .8em;
+
+      &.download-icon {
+        path {
+          fill: white;
+        }
+      }
+    }
 
     &:hover {
       display: block;

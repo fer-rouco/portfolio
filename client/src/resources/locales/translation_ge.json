@@ -10,7 +10,11 @@
       "navBar": {
         "about": "Über",
         "work": "Arbeit",
-        "contact": "Kontakt"
+        "contact": "Kontakt",
+        "context-menu": {
+          "resume": "Fasst zusammen",
+          "language": "Sprache"
+        }
       }
     },
     "controls": {
