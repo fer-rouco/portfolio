@@ -173,10 +173,17 @@
           &.language {
             display: flex;
             justify-content: space-between;
-  
+
             &::after {
               padding-left: .5em;
+              width: 2em;
+              height: 2em;
+            }
+            &.arrow-down::after {
               content: url('../../assets/icons/arrow-down.svg');
+            }
+            &.arrow-up::after {
+              content: url('../../assets/icons/arrow-up.svg');
             }
           }
         }

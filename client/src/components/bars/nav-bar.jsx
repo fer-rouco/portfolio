@@ -121,7 +121,7 @@ function ContextMenuLanguageButton({ toggleState }) {
   const flagMap = buildFlagMap();
   const language = localStorageService.getItem(STORAGE_LANGUAGE);
   return (
-    <NavItemButton fn={() => { setShow(!show); }} className="language" theme={theme} ><div className="center">{flagMap.get(language)}{t('language')}</div></NavItemButton>
+    <NavItemButton fn={() => { setShow(!show); }} className={`language arrow-${show ? 'up' : 'down'}`} theme={theme} ><div className="center">{flagMap.get(language)}{t('language')}</div></NavItemButton>
  );
 }
 
