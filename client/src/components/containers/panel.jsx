@@ -14,7 +14,8 @@ function Panel({children, className, transparent}) {
 
 Panel.propTypes = {
   children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  className: PropTypes.string,
+  transparent: PropTypes.bool
 };
 
 export default Panel;

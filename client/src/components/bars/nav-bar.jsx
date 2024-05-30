@@ -27,9 +27,11 @@ function NavItem(content) {
   );
 }
 
-function Link({children, href, theme}) {
+function Link({children, href, className}) {
+  const { theme } = useTheme();
+
   return (
-    <a className={`nav__link ${theme}`} href={href} name='nav-item' tabIndex="0">
+    <a className={`nav__link ${theme} ${className}`} href={href} name='nav-item' tabIndex="0">
       {children}
     </a>
   );
@@ -38,12 +40,14 @@ function Link({children, href, theme}) {
 Link.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
-  theme: PropTypes.string,
+  className: PropTypes.string
 };
 
-function Button({children, fn, theme}) {
+function Button({children, fn, className}) {
+  const { theme } = useTheme();
+
   return (
-    <button className={`nav__button ${theme}`} onClick={fn} name='nav-item' tabIndex="0">
+    <button className={`nav__button ${theme} ${className}`} onClick={fn} name='nav-item' tabIndex="0">
       {children}
     </button>
   );
@@ -52,18 +56,18 @@ function Button({children, fn, theme}) {
 Button.propTypes = {
   children: PropTypes.node.isRequired,
   fn: PropTypes.func.isRequired,
-  theme: PropTypes.string,
+  className: PropTypes.string
 };
 
-function NavItemLink({children, href, theme}) {
+function NavItemLink({children, href, className}) {
   return (
-    NavItem( Link({children, href, theme}) )
+    NavItem( Link({children, href, className}) )
   );
 }
 
-function NavItemButton({children, fn, theme}) {
+function NavItemButton({children, fn, className}) {
   return (
-    NavItem( Button({children, fn, theme}) )
+    NavItem( Button({children, fn, className}) )
   );
 }
 
@@ -88,6 +92,7 @@ function buildFlagMap() {
 }
 
 function ContextMenuLanguageContent() {
+  const { theme } = useTheme();
   const flagMap = buildFlagMap();
   const tLanguage = useTranslation('languages').t;
   const translationLanguages = Object.keys(i18n.services.resourceStore.data);
@@ -101,7 +106,7 @@ function ContextMenuLanguageContent() {
 
   return (
     languages.map(language => (
-      <NavItemButton key={language.value} fn={() => {handleLanguageChange(language.value)}} theme >
+      <NavItemButton key={language.value} fn={() => {handleLanguageChange(language.value)}} theme={theme} >
         {language.flag}
         {language.label}
       </NavItemButton>
@@ -109,21 +114,22 @@ function ContextMenuLanguageContent() {
   );
 }
 
-function ContextMenuLanguageButton({toggleState}) {
+function ContextMenuLanguageButton({ toggleState }) {
+  const { theme } = useTheme();
   const [show, setShow] = toggleState;
   const { t } = useTranslation('components', { keyPrefix: 'bars.navBar.context-menu' });
   const flagMap = buildFlagMap();
   const language = localStorageService.getItem(STORAGE_LANGUAGE);
   return (
-    <NavItemButton fn={() => { setShow(!show); }}>{flagMap.get(language)}{t('language')}</NavItemButton>
+    <NavItemButton fn={() => { setShow(!show); }} className="language" theme={theme} ><div className="center">{flagMap.get(language)}{t('language')}</div></NavItemButton>
  );
 }
 
-function ContextMenuLanguage() {
-  const [show, setShow] = useState(false);
+function ContextMenuLanguage({ toggleState }) {
+  const [show] = toggleState;
   return (
     <>
-      <ContextMenuLanguageButton toggleState={[show, setShow]} ></ContextMenuLanguageButton>
+      <ContextMenuLanguageButton toggleState={toggleState} ></ContextMenuLanguageButton>
         { show ? 
           <Panel transparent>
             <ContextMenuLanguageContent></ContextMenuLanguageContent>
@@ -145,33 +151,29 @@ function ContextMenuIcon() {
   );
 }
 
-function ContextMenuContent({theme}) {
+function ContextMenuContent() {
+  const { theme } = useTheme();
   const { t } = useTranslation('components', { keyPrefix: 'bars.navBar.context-menu' });
+  const [show, setShow] = useState(false);
 
   return (
-    <div className={`context-menu ${theme}`} >
+    <div className={`context-menu ${theme}`} onMouseLeave={() => { setShow(false); }} >
       { downloadResumeLink(t('resume'), theme) }
-      <ContextMenuLanguage></ContextMenuLanguage>
+      <ContextMenuLanguage toggleState={[show, setShow]}></ContextMenuLanguage>
     </div >
   );
 }
 
-ContextMenuContent.propTypes = {
-  theme: PropTypes.string,
-};
+function ContextMenu() {
+  const { theme } = useTheme();
 
-function ContextMenu({theme}) {
   return (
-    <>
+    <div className="context-menu-container">
       <ContextMenuIcon></ContextMenuIcon>
       <ContextMenuContent theme={theme} ></ContextMenuContent>
-    </>
+    </div>
   );
 }
-
-ContextMenu.propTypes = {
-  theme: PropTypes.string,
-};
 
 function handleLanguageChange(language) {
   i18n.changeLanguage(language, (error, t) => {
@@ -202,11 +204,11 @@ function NavBar() {
   return (
     <nav className={`nav ${theme}`} >
       <ul className='nav__list' >
-        <NavItemLink href='#welcome-section' theme={theme} >{t('about')}</NavItemLink>
-        <NavItemLink href='#projects-section' theme={theme} >{t('work')}</NavItemLink>
-        <NavItemLink href='#contact-section' theme={theme} >{t('contact')}</NavItemLink>
+        <NavItemLink href='#welcome-section' className='header' >{t('about')}</NavItemLink>
+        <NavItemLink href='#projects-section' className='header' >{t('work')}</NavItemLink>
+        <NavItemLink href='#contact-section' className='header' >{t('contact')}</NavItemLink>
         <ThemeToggler></ThemeToggler>
-        <ContextMenu theme={theme} ></ContextMenu>
+        <ContextMenu ></ContextMenu>
       </ul>
     </nav>
   );
