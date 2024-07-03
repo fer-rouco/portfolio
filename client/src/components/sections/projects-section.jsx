@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
-import Card from "../general/card";
-import { TECH } from "../general/tag";
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useTheme } from '../../contexts/theme-context';
+import Card from "../general/card";
+import { TECH } from "../general/tag";
 import "./projects-section.scss";
 
 const PROJECTS = [
@@ -25,9 +25,8 @@ const PROJECTS = [
     key: 'marvel-characters',
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/marvel-characters.png',
     hrefCode: 'https://github.com/fer-rouco/marvel-characters/',
-    // hrefLive: 'https://fer-rouco.github.io/marvel-characters/',
-    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass],
-    hidden: true
+    hrefLive: 'https://fer-rouco.github.io/marvel-characters/',
+    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
   },
   {
     key: 'bank-products',
