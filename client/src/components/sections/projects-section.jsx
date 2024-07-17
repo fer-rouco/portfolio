@@ -37,11 +37,10 @@ const PROJECTS = [
   },
   {
     key: 'ncr-challenge',
-    srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/ncr-challenge.png',
+    srcImg: 'https://raw.githubusercontent.com/fer-rouco/ncr-challenge/main/assets/ncr-challenge.png',
     hrefCode: 'https://github.com/fer-rouco/ncr-challenge/',
-    // hrefLive: 'https://fer-rouco.github.io/ncr-challenge/',
+    hrefLive: 'https://fer-rouco.github.io/ncr-challenge/',
     tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.AmCharts, TECH.PopperJs],
-    hidden: true
   },
   {
     key: 'eldar-challenge',
