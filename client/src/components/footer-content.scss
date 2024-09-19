@@ -48,12 +48,25 @@
       color: var(--main-red);
     }
   
-    .codewars-badge {
+    .fadeinout-transform-scale-xy-animation {
       animation: fadeinout 1s linear infinite, transform-scale-xy 1s ease-in-out infinite;
       -webkit-transition: width 1s ease-in-out;
       -moz-transition: width 1s ease-in-out;
       -o-transition: width 1s ease-in-out;
       transition: width 1s ease-in-out;
+    }
+
+    .codewars-badge {
+      @extend .fadeinout-transform-scale-xy-animation;
+    }
+
+    .free-code-camp-image {
+      @extend .fadeinout-transform-scale-xy-animation;
+
+      background-color: #0A0A22;
+      content: url('../assets/freeCodeCamp.svg');
+      height: 1.2em;
+      padding: 0.2em;
     }
   
   }

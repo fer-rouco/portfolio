@@ -1,8 +1,8 @@
-import "./footer-content.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faGithub, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTheme } from '../contexts/theme-context';
+import "./footer-content.scss";
 
 function ProfileLink({ id, href, children, ariaLabel }) {
   return (
@@ -29,8 +29,11 @@ function FooterContet() {
         <ProfileLinkIcon id='GitHub'   icon={faGithub}   href="https://github.com/fer-rouco"></ProfileLinkIcon>
         <ProfileLinkIcon id='WhatsApp' icon={faWhatsapp} href="https://wa.me/5491161132585"></ProfileLinkIcon>
         <ProfileLinkIcon id='Mail'     icon={faEnvelope} href="mailto:rouco.fernando@gmail.com"></ProfileLinkIcon>
-        <ProfileLink id='LinkedIn'                       href="https://www.codewars.com/users/fer.rouco">
+        <ProfileLink     id='CodeWars'                   href="https://www.codewars.com/users/fer.rouco">
           <img alt="Light Badge (micro)" className="codewars-badge" src="https://www.codewars.com/users/fer.rouco/badges/micro"></img>
+        </ProfileLink>
+        <ProfileLink     id='FreeCodeCamp'               href="https://www.freecodecamp.org/fer-rouco">
+          <img alt="Free Code Camp" className="free-code-camp-image" ></img>
         </ProfileLink>
       </div>
       <div className={`copyrights ${theme}`} >
