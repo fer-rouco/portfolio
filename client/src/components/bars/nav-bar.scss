@@ -37,13 +37,17 @@
   &__logo {
     margin-left: 1rem;
 
+    & svg, path, text {
+      width: 2.2rem !important;
+    }
+
     &.light {
-      & svg path, text {
+      & svg, path, text {
         fill: #831187 !important;
       }  
     }
     &.dark {
-      & svg path, text {
+      & svg, path, text {
         fill: #5EC2B1 !important;
       }  
     }
