@@ -32,11 +32,11 @@ function FooterContet() {
         <ProfileLink     id='Codepen'                    href="https://codepen.io/fer-rouco/pens/public">
           <img alt="Codepen" className="codepen-image" src="https://assets.codepen.io/t-1/user-default-avatar.jpg?fit=crop&format=auto&height=512&version=0&width=512" ></img>
         </ProfileLink>
-        <ProfileLink     id='CodeWars'                   href="https://www.codewars.com/users/fer.rouco">
-          <img alt="Light Badge (micro)" className="codewars-badge" src="https://www.codewars.com/users/fer.rouco/badges/micro"></img>
-        </ProfileLink>
         <ProfileLink     id='FreeCodeCamp'               href="https://www.freecodecamp.org/fer-rouco">
           <img alt="Free Code Camp" className="free-code-camp-image" ></img>
+        </ProfileLink>
+        <ProfileLink     id='CodeWars'                   href="https://www.codewars.com/users/fer.rouco">
+          <img alt="Light Badge (micro)" className="codewars-badge" src="https://www.codewars.com/users/fer.rouco/badges/micro"></img>
         </ProfileLink>
       </div>
       <div className={`copyrights ${theme}`} >

@@ -65,8 +65,9 @@
 
       background-color: #0A0A22;
       content: url('../assets/freeCodeCamp.svg');
-      height: 1.2em;
+      height: 2em;
       padding: 0.2em;
+      width: 2em;
     }
 
     .codepen-image {
@@ -81,7 +82,7 @@
     position: absolute;
     font-size: 1.2em;
     right: 1em;
-    top: .5em;
+    top: .2em;
     &.light {
       color: var(--main-gray);
     }
