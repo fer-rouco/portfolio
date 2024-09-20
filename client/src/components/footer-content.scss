@@ -68,6 +68,12 @@
       height: 1.2em;
       padding: 0.2em;
     }
+
+    .codepen-image {
+      @extend .fadeinout-transform-scale-xy-animation;
+
+      height: 2em;
+    }
   
   }
   
