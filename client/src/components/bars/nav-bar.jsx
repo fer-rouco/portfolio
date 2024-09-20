@@ -206,7 +206,6 @@ function NavBar() {
     <nav className={`nav ${theme}`} >
       <div className={`nav__logo ${theme}`} >
         <Logo></Logo>
-        {/* <img alt="Logo" className="logo" ></img> */}
       </div>
       <ul className='nav__list' >
         <NavItemLink href='#welcome-section' className='header' >{t('about')}</NavItemLink>
