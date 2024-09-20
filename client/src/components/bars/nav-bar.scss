@@ -23,11 +23,31 @@
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   padding-right: .2em;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   .clean-button-styles {
     background: transparent;
     border: none;
     cursor: pointer;
     display: flex;
+  }
+
+  &__logo {
+    margin-left: 1rem;
+
+    &.light {
+      & svg path, text {
+        fill: #831187 !important;
+      }  
+    }
+    &.dark {
+      & svg path, text {
+        fill: #5EC2B1 !important;
+      }  
+    }
+    
   }
 
   &__list {

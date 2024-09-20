@@ -1,19 +1,20 @@
-import "./nav-bar.scss";
+import i18n from "i18next";
 import PropTypes from 'prop-types';
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { useTheme } from '../../contexts/theme-context';
-import Panel from '../containers/panel';
+import { ReactComponent as Download } from '../../assets/icons/download.svg';
+import { ReactComponent as English } from '../../assets/icons/flag-en.svg';
+import { ReactComponent as Spanish } from '../../assets/icons/flag-es.svg';
+import { ReactComponent as German } from '../../assets/icons/flag-ge.svg';
+import { ReactComponent as Portuguese } from '../../assets/icons/flag-pt.svg';
 import { ReactComponent as Moon } from '../../assets/icons/moon.svg';
 import { ReactComponent as Sun } from '../../assets/icons/sun.svg';
-import { ReactComponent as Download } from '../../assets/icons/download.svg';
-import { ReactComponent as Spanish } from '../../assets/icons/flag-es.svg';
-import { ReactComponent as Portuguese } from '../../assets/icons/flag-pt.svg';
-import { ReactComponent as German } from '../../assets/icons/flag-ge.svg';
-import { ReactComponent as English } from '../../assets/icons/flag-en.svg';
+import { ReactComponent as Logo } from '../../assets/logo.svg';
+import { useTheme } from '../../contexts/theme-context';
+import Panel from '../containers/panel';
 import { STORAGE_LANGUAGE } from "./../../services/storage/storage-constants";
 import storageManagerService from "./../../services/storage/storage-manager-service";
-import i18n from "i18next";
+import "./nav-bar.scss";
 
 const localStorageService = storageManagerService();
 
@@ -203,6 +204,10 @@ function NavBar() {
 
   return (
     <nav className={`nav ${theme}`} >
+      <div className={`nav__logo ${theme}`} >
+        <Logo></Logo>
+        {/* <img alt="Logo" className="logo" ></img> */}
+      </div>
       <ul className='nav__list' >
         <NavItemLink href='#welcome-section' className='header' >{t('about')}</NavItemLink>
         <NavItemLink href='#projects-section' className='header' >{t('work')}</NavItemLink>
