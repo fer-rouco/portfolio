@@ -12,7 +12,8 @@ const PROJECTS = [
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/portfolio/main/assets/Portfolio.png',
     hrefCode: 'https://github.com/fer-rouco/portfolio/',
     hrefLive: 'https://fer-rouco.github.io/portfolio/',
-    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.Sass]
+    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.Sass],
+    hidden: true
   },
   {
     key: 'minesweeper',
@@ -26,27 +27,27 @@ const PROJECTS = [
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/marvel-characters.png',
     hrefCode: 'https://github.com/fer-rouco/marvel-characters/',
     hrefLive: 'https://fer-rouco.github.io/marvel-characters/',
-    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
+    tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass],
   },
   {
     key: 'bank-products',
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/bank-products/main/assets/product-list.png',
     hrefCode: 'https://github.com/fer-rouco/bank-products/',
-    hrefLive: 'https://fer-rouco.github.io/bank-products/',
+    // hrefLive: 'https://fer-rouco.github.io/bank-products/',
     tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass]
   },
   {
     key: 'ncr-challenge',
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/ncr-challenge/main/assets/ncr-challenge.png',
     hrefCode: 'https://github.com/fer-rouco/ncr-challenge/',
-    hrefLive: 'https://fer-rouco.github.io/ncr-challenge/',
+    // hrefLive: 'https://fer-rouco.github.io/ncr-challenge/',
     tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.AmCharts, TECH.PopperJs],
   },
   {
     key: 'eldar-challenge',
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/eldar-challenge/main/assets/product-list.png',
     hrefCode: 'https://github.com/fer-rouco/eldar-challenge/',
-    hrefLive: 'https://fer-rouco.github.io/eldar-challenge/',
+    // hrefLive: 'https://fer-rouco.github.io/eldar-challenge/',
     tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript, TECH.React, TECH.StyledComponents, TECH.Axios, TECH.Node, TECH.Express, TECH.Mongoose]
   },
   {
@@ -82,7 +83,8 @@ const PROJECTS = [
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/random-quote-machine/main/assets/screenshot.png',
     hrefCode: 'https://github.com/fer-rouco/random-quote-machine/',
     hrefLive: 'https://fer-rouco.github.io/random-quote-machine/',
-    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript]
+    tags: [TECH.HTML, TECH.CSS3, TECH.JavaScript],
+    hidden: true
   }
 ];
 
