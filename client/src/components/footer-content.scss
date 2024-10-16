@@ -58,6 +58,8 @@
 
     .codewars-badge {
       @extend .fadeinout-transform-scale-xy-animation;
+
+      height: 1.5em;
     }
 
     .free-code-camp-image {
