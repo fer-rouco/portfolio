@@ -1,27 +1,46 @@
-.button {
-  font-size: 1.4em;
-  font-weight: bold;
-  padding: 0.8em;
-  background-color: var(--main-red);
-  color: var(--main-white);
-  border: none;
-  border-radius: 1.3em;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
-  opacity: 85%;
+.button-container {
+  position: relative;
 
-  &:hover, &:focus {
-    opacity: 100%;
+  .button {
+    width: 100%;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 0.8em;
+    background-color: var(--main-red);
+    color: var(--main-white);
+    border: none;
+    border-radius: 1.3em;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.4);
+    opacity: 85%;
+  
+    &:hover, &:focus {
+      opacity: 100%;
+    }
+  
+    &:active {
+      box-shadow: none;
+    }
+  
+    &:disabled {
+      pointer-events: none;
+      cursor: not-allowed;
+      opacity: 50%;
+    }
   }
-
-  &:active {
-    box-shadow: none;
-  }
-
-  &:disabled {
-    pointer-events: none;
-    cursor: not-allowed;
-    opacity: 50%;
+  
+  [data-tooltip]:hover::after {
+    display: block;
+    position: absolute;
+    content: attr(data-tooltip);
+    border: 1px solid black;
+    background: #eee;
+    padding: 0.5em;
+    top: 1px;
+    color: red;
+    border-radius: 1em;
+    font-size: .5em;
+    top: calc(-100%);
   }
 }

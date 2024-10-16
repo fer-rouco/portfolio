@@ -1,11 +1,13 @@
 import "./button.scss";
 
-export default function Button({ type, disabled, labelPrefix, children, labelSufix, onClick, onKeyDown }) {
+export default function Button({ type, disabled, labelPrefix, children, labelSufix, onClick, onKeyDown, tooltip }) {
   return (
-    <button className='button' type={type || 'button'} disabled={disabled} onClick={onClick} onKeyDown={onKeyDown} tabIndex="0" >
-      {labelPrefix}
-      {children}
-      {labelSufix}
-    </button>
+    <div className="button-container">
+      <button className='button' type={type || 'button'} disabled={disabled} onClick={onClick} onKeyDown={onKeyDown} tabIndex="0" data-tooltip={tooltip} >
+        {labelPrefix}
+        {children}
+        {labelSufix}
+      </button>
+    </div>
   );
 }
