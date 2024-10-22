@@ -1,0 +1,25 @@
+
+.tooltip-container {
+  position: relative;
+
+  &:hover {
+    .tooltip-container__body {
+      display: block;
+    }
+  }
+
+  &__body {
+    display: none;
+    position: absolute;
+    content: attr(data-tooltip);
+    border: 1px solid black;
+    background: #aaa;
+    padding: 0.5em;
+    color: #000080;
+    border-radius: 1em;
+    font-size: .5em;
+    top: -140%;
+    left: 0;
+    z-index: 1;
+  } 
+}
