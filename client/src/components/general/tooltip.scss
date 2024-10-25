@@ -3,7 +3,7 @@
   position: relative;
 
   &:hover {
-    .tooltip-container__body {
+    .tooltip-container__body:not(:empty) {
       display: block;
     }
   }
@@ -11,7 +11,6 @@
   &__body {
     display: none;
     position: absolute;
-    content: attr(data-tooltip);
     border: 1px solid black;
     background: #aaa;
     padding: 0.5em;

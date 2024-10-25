@@ -27,7 +27,7 @@ const PROJECTS = [
     srcImg: 'https://raw.githubusercontent.com/fer-rouco/marvel-characters/main/assets/marvel-characters.png',
     codeHref: 'https://github.com/fer-rouco/marvel-characters/',
     liveHref: 'https://fer-rouco.github.io/marvel-characters/',
-    liveTooltip: <div><span>User: msuarez@gmail.com</span><span>Pass: MSuarez</span></div>,
+    liveTooltip: <div><span>Test user</span><br></br><span>User: msuarez@gmail.com</span><br></br><span>Pass: MSuarez</span></div>,
     tags: [TECH.HTML, TECH.CSS3, TECH.TypeScript, TECH.Angular, TECH.Sass],
   },
   {
