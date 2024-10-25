@@ -6,24 +6,30 @@ import WelcomeSectionBackgroundDark from './welcome-section-background-dark';
 import WelcomeSectionBackgroundLight from './welcome-section-background-light';
 import "./welcome-section.scss";
 
+function WelcomeSectionTextContainer() {
+  const { isDarkMode } = useTheme();
+  const { t } = useTranslation('components', { keyPrefix: 'sections.welcome' });
+  const darkModeClass = isDarkMode() ? 'dark' : 'light';
+
+  return (
+    <div className='welcome-section__text-container'>
+      <h1 className={classnames('welcome-section__text-hi', darkModeClass)} >{t('hi-first-line')}</h1>
+      <p className={classnames('welcome-section__text-web-dev', darkModeClass)} >{t('hi-second-line')}</p>
+    </div>
+  );
+}
+
 function WelcomeSection() {
   const { theme, isDarkMode } = useTheme();
-  const { t } = useTranslation('components', { keyPrefix: 'sections.welcome' });
-
-  const renderTextContainer = () => {
-    const darkModeClass = isDarkMode() ? 'dark' : 'light';
-    return (
-      <div className='welcome-section__text-container'>
-        <h1 className={classnames('welcome-section__text-hi', darkModeClass)} >{t('hi-first-line')}</h1>
-        <p className={classnames('welcome-section__text-web-dev', darkModeClass)} >{t('hi-second-line')}</p>
-      </div>
-    );
-  }
 
   return (
     <section id='welcome-section' className={`welcome-section welcome-section-${theme}`} >
-      { renderTextContainer() }
-      { isDarkMode() ? <WelcomeSectionBackgroundDark></WelcomeSectionBackgroundDark> : <WelcomeSectionBackgroundLight></WelcomeSectionBackgroundLight> }
+      <WelcomeSectionTextContainer></WelcomeSectionTextContainer>
+      { 
+        isDarkMode()
+          ? <WelcomeSectionBackgroundDark></WelcomeSectionBackgroundDark>
+          : <WelcomeSectionBackgroundLight></WelcomeSectionBackgroundLight> 
+      }
       { <Waves></Waves> }
     </section>
   );
