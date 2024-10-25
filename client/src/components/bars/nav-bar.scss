@@ -200,8 +200,9 @@
 
             &::after {
               padding-left: .5em;
-              width: 2em;
-              height: 2em;
+              margin-top: .2em;
+              width: 1.6em;
+              height: 1.6em;
             }
             &.arrow-down::after {
               content: url('../../assets/icons/arrow-down.svg');

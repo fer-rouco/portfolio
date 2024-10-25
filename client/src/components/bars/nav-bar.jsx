@@ -212,7 +212,7 @@ function NavBar() {
         <NavItemLink href='#projects-section' className='header' >{t('work')}</NavItemLink>
         <NavItemLink href='#contact-section' className='header' >{t('contact')}</NavItemLink>
         <ThemeToggler></ThemeToggler>
-        <ContextMenu ></ContextMenu>
+        <ContextMenu></ContextMenu>
       </ul>
     </nav>
   );
