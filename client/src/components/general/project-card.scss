@@ -1,4 +1,9 @@
 .project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
   &__tag-container {
     height: 1.5em;
     margin: 0.5em 0 0.5em;
